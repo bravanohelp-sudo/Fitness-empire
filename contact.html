@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Fitness Empire Kanpur</title>
+<meta name="description" content="Get in touch with Fitness Empire Kanpur. Visit us at Barsana Market, Satbari Road or reach out via WhatsApp. Open Mon-Sat 6AM-10PM.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0B0B0D;--fire:#E8380D;--ember:#FF6B2B;--gold:#C07A1A;
+  --ash:#131315;--ash2:#1C1C20;--text:#F0EDE8;
+  --muted:rgba(240,237,232,.44);--border:rgba(232,56,13,.14);
+  --radius:16px;
+  --font-headline:'Bebas Neue',sans-serif;
+  --font-nav:'Syne',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+}
+
+[data-theme="ash"]{--fire:#6B8CDE;--ember:#8EAAEF;--bg:#0C0C10;--border:rgba(107,140,222,.14)}
+[data-theme="inferno"]{--fire:#FF4500;--ember:#FF6A33;--bg:#0A0300;--border:rgba(255,69,0,.14)}
+
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:var(--font-body);cursor:none;overflow-x:hidden}
+body{background:var(--bg);overflow-x:hidden;min-height:100vh}
+*,*::before,*::after{cursor:none!important}
+
+/* ── CURSOR ── */
+.cursor-dot{position:fixed;width:7px;height:7px;background:var(--fire);border-radius:50%;pointer-events:none;z-index:99999;box-shadow:0 0 12px var(--fire),0 0 24px rgba(232,56,13,.4);transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(232,56,13,.46);border-radius:50%;pointer-events:none;z-index:99998;transition:width .25s,height .25s,border-color .25s;transform:translate(-50%,-50%)}
+.cursor-ring.hover{width:48px;height:48px;border-color:var(--fire)}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--fire),var(--ember),var(--gold));z-index:99997;box-shadow:0 0 10px var(--fire),0 0 20px rgba(232,56,13,.3)}
+
+/* ── GRAIN ── */
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;opacity:.042}
+
+/* ── THREE CANVAS ── */
+#three-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none}
+
+/* ── NAVBAR ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:9990;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;transition:backdrop-filter .3s,background .3s}
+.navbar.scrolled{backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);background:rgba(11,11,13,.72);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-headline);font-size:28px;letter-spacing:2px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .logo-icon{width:36px;height:36px}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--font-nav);font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--fire);transition:width .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--fire)}
+.nav-links a.active::after{width:100%}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:transform .3s,opacity .3s}
+
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(11,11,13,.96);backdrop-filter:blur(40px);z-index:9989;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--font-headline);font-size:42px;letter-spacing:3px;color:var(--text);text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s,color .25s}
+.mobile-menu.active a{opacity:1;transform:translateY(0)}
+.mobile-menu a:hover{color:var(--fire)}
+.mobile-close{position:absolute;top:24px;right:32px;background:none;border:none;color:var(--text);font-size:32px;font-family:var(--font-nav)}
+
+/* ── CONTENT ── */
+.content{position:relative;z-index:10}
+
+/* ── FADE ── */
+.fi{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.fi.visible{opacity:1;transform:translateY(0)}
+
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--fire);color:#fff;font-family:var(--font-nav);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:none;border-radius:var(--radius);box-shadow:0 0 24px rgba(232,56,13,.35),0 0 48px rgba(232,56,13,.15);transition:transform .25s,box-shadow .25s;animation:firePulse 2.4s ease-in-out infinite}
+@keyframes firePulse{0%,100%{box-shadow:0 0 24px rgba(232,56,13,.35),0 0 48px rgba(232,56,13,.15)}50%{box-shadow:0 0 32px rgba(232,56,13,.55),0 0 64px rgba(232,56,13,.25)}}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 36px rgba(232,56,13,.55),0 0 72px rgba(232,56,13,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:rgba(240,237,232,.06);backdrop-filter:blur(20px);color:var(--text);font-family:var(--font-nav);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(240,237,232,.12);border-radius:var(--radius);transition:transform .25s,background .25s,border-color .25s}
+.btn-secondary:hover{transform:translateY(-2px);background:rgba(240,237,232,.10);border-color:rgba(240,237,232,.22)}
+
+/* ── SECTION UTILS ── */
+.section-eyebrow{font-family:var(--font-nav);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--fire);margin-bottom:16px}
+.section-title{font-family:var(--font-headline);font-size:clamp(40px,6vw,72px);line-height:1;color:var(--text);margin-bottom:60px}
+
+/* ══════════════════════════════════════
+   HERO
+   ══════════════════════════════════════ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 60px 100px;position:relative;overflow:hidden}
+.hero-aurora{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none}
+.hero-aurora .blob{position:absolute;border-radius:50%;filter:blur(120px);animation:auroraFloat 12s ease-in-out infinite alternate}
+.hero-aurora .blob-1{width:550px;height:550px;background:rgba(232,56,13,.12);top:-15%;right:10%}
+.hero-aurora .blob-2{width:450px;height:450px;background:rgba(255,107,43,.08);bottom:-10%;left:15%;animation-delay:-5s}
+@keyframes auroraFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-18px) scale(1.04)}100%{transform:translate(-12px,8px) scale(.97)}}
+
+.hero-eyebrow{font-family:var(--font-nav);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--fire);margin-bottom:28px;opacity:0;transform:translateY(20px)}
+.hero h1{font-family:var(--font-headline);font-size:clamp(52px,9vw,120px);line-height:.95;color:var(--text);max-width:900px;margin-bottom:24px;opacity:0;transform:translateY(30px)}
+.hero h1 .fire{color:var(--fire)}
+.hero-sub{font-family:var(--font-body);font-weight:300;font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:540px;line-height:1.65;opacity:0;transform:translateY(20px)}
+.hero.loaded .hero-eyebrow{opacity:1;transform:translateY(0);transition:opacity .7s .2s,transform .7s .2s cubic-bezier(.16,1,.3,1)}
+.hero.loaded h1{opacity:1;transform:translateY(0);transition:opacity .7s .4s,transform .7s .4s cubic-bezier(.16,1,.3,1)}
+.hero.loaded .hero-sub{opacity:1;transform:translateY(0);transition:opacity .7s .6s,transform .7s .6s cubic-bezier(.16,1,.3,1)}
+
+/* ══════════════════════════════════════
+   CONTACT INFO GRID
+   ══════════════════════════════════════ */
+.contact-section{padding:120px 60px;position:relative;background:var(--bg)}
+.contact-inner{max-width:1200px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact-card{background:rgba(240,237,232,.03);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;transition:border-color .35s,transform .35s}
+.contact-card:hover{border-color:rgba(232,56,13,.3);transform:translateY(-3px)}
+.contact-icon{width:48px;height:48px;border-radius:var(--radius);background:rgba(232,56,13,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.contact-icon svg{width:22px;height:22px;stroke:var(--fire);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-card h3{font-family:var(--font-headline);font-size:24px;color:var(--text);margin-bottom:8px}
+.contact-card p{font-family:var(--font-body);font-weight:300;font-size:14px;line-height:1.7;color:var(--muted)}
+.contact-card a{color:var(--fire);text-decoration:none;font-weight:500;transition:opacity .25s}
+.contact-card a:hover{opacity:.8}
+.contact-card .contact-action{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 20px;background:rgba(232,56,13,.1);border:1px solid var(--border);border-radius:50px;font-family:var(--font-nav);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--fire);text-decoration:none;transition:background .25s,border-color .25s}
+.contact-card .contact-action:hover{background:rgba(232,56,13,.18);border-color:rgba(232,56,13,.3)}
+
+/* ══════════════════════════════════════
+   MAP & ADDRESS
+   ══════════════════════════════════════ */
+.map-section{padding:120px 60px;position:relative;background:var(--bg)}
+.map-inner{max-width:1200px;margin:0 auto}
+.map-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.map-embed{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3}
+.map-embed iframe{width:100%;height:100%;border:0;filter:grayscale(.8) contrast(1.1) brightness(.7);transition:filter .4s}
+.map-embed:hover iframe{filter:grayscale(.3) contrast(1) brightness(.85)}
+
+.address-block{display:flex;flex-direction:column;gap:32px}
+.address-item{display:flex;gap:16px;align-items:flex-start}
+.address-dot{width:36px;height:36px;border-radius:50%;background:rgba(232,56,13,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.address-dot svg{width:16px;height:16px;stroke:var(--fire);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.address-text h4{font-family:var(--font-nav);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);margin-bottom:6px}
+.address-text p{font-family:var(--font-body);font-weight:300;font-size:14px;line-height:1.7;color:var(--muted)}
+.address-text a{color:var(--fire);text-decoration:none;font-weight:500}
+
+/* ══════════════════════════════════════
+   ENQUIRY FORM
+   ══════════════════════════════════════ */
+.form-section{padding:120px 60px;position:relative;background:var(--bg)}
+.form-inner{max-width:800px;margin:0 auto}
+.form-card{background:rgba(240,237,232,.03);border:1px solid var(--border);border-radius:var(--radius);padding:48px 40px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-family:var(--font-nav);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.form-input{padding:14px 18px;font-family:var(--font-body);font-weight:400;font-size:15px;color:var(--text);background:rgba(240,237,232,.04);border:1px solid var(--border);border-radius:var(--radius);outline:none;transition:border-color .25s,box-shadow .25s;-webkit-appearance:none}
+.form-input:focus{border-color:var(--fire);box-shadow:0 0 0 3px rgba(232,56,13,.15)}
+.form-input::placeholder{color:var(--muted)}
+select.form-input{cursor:none!important}
+select.form-input option{background:var(--ash);color:var(--text)}
+textarea.form-input{resize:vertical;min-height:100px}
+
+.form-submit{margin-top:24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+
+/* ══════════════════════════════════════
+   HOURS & PAYMENTS
+   ══════════════════════════════════════ */
+.info-section{padding:120px 60px;position:relative;background:var(--bg)}
+.info-inner{max-width:1200px;margin:0 auto}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+
+.hours-card,.payments-card{background:rgba(240,237,232,.03);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px}
+
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(240,237,232,.04)}
+.hours-row:last-child{border-bottom:none}
+.hours-day{font-family:var(--font-nav);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text)}
+.hours-time{font-family:var(--font-body);font-weight:400;font-size:14px;color:var(--muted)}
+.hours-time.closed{color:var(--fire);font-weight:500}
+.hours-status{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:50px;font-family:var(--font-nav);font-weight:800;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#25D366;margin-bottom:24px}
+.hours-status.closed-now{background:rgba(232,56,13,.1);border-color:rgba(232,56,13,.2);color:var(--fire)}
+.status-pulse{width:8px;height:8px;border-radius:50%;background:currentColor;animation:statusPulse 1.5s ease-in-out infinite}
+@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.payment-methods{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.payment-item{display:flex;align-items:center;gap:10px;padding:14px 16px;background:rgba(240,237,232,.03);border:1px solid rgba(240,237,232,.04);border-radius:var(--radius);transition:border-color .25s}
+.payment-item:hover{border-color:var(--border)}
+.payment-icon{width:32px;height:32px;border-radius:50%;background:rgba(232,56,13,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.payment-icon svg{width:16px;height:16px;stroke:var(--fire);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.payment-name{font-family:var(--font-nav);font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text)}
+
+/* ══════════════════════════════════════
+   CTA
+   ══════════════════════════════════════ */
+.cta-section{padding:160px 60px;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(232,56,13,.12) 0%,transparent 70%);pointer-events:none}
+.cta-section h2{font-family:var(--font-headline);font-size:clamp(48px,8vw,100px);line-height:.95;color:var(--text);margin-bottom:24px;position:relative;z-index:2}
+.cta-section h2 .fire{color:var(--fire)}
+.cta-section p{font-family:var(--font-body);font-weight:300;font-size:18px;color:var(--muted);margin-bottom:48px;max-width:540px;margin-left:auto;margin-right:auto;position:relative;z-index:2;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+
+/* ── FOOTER ── */
+.footer{padding:48px 100px 48px 140px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;background:var(--bg)}
+.footer-left{font-family:var(--font-body);font-weight:300;font-size:13px;color:var(--muted)}
+.footer-right a{font-family:var(--font-body);font-weight:300;font-size:13px;color:var(--muted);text-decoration:none;transition:color .25s}
+.footer-right a:hover{color:var(--text)}
+
+/* ── WHATSAPP ── */
+.whatsapp-btn{position:fixed;bottom:32px;right:32px;z-index:9995;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .25s;animation:waPulse 2s ease-in-out infinite}
+.whatsapp-btn:hover{transform:scale(1.08)}
+.whatsapp-btn svg{width:28px;height:28px;fill:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.3)}50%{box-shadow:0 4px 20px rgba(37,211,102,.35),0 0 0 14px rgba(37,211,102,0)}}
+
+/* ── THEME SWITCHER ── */
+.theme-switcher{position:fixed;bottom:32px;left:32px;z-index:9995;display:flex;gap:10px;background:rgba(240,237,232,.05);border:1px solid var(--border);border-radius:50px;padding:8px 12px;backdrop-filter:blur(12px)}
+.theme-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(240,237,232,.15);transition:border-color .25s,transform .25s}
+.theme-dot:hover{transform:scale(1.15)}
+.theme-dot.active{border-color:var(--text)}
+.theme-dot[data-theme="ember"]{background:#E8380D}
+.theme-dot[data-theme="ash"]{background:#6B8CDE}
+.theme-dot[data-theme="inferno"]{background:#FF4500}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media(max-width:768px){
+  .hero{padding:120px 28px 80px}
+  .hero h1{font-size:clamp(40px,11vw,72px)}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .navbar{padding:14px 24px}
+  .contact-section,.map-section,.form-section,.info-section{padding:80px 28px}
+  .contact-grid{grid-template-columns:1fr}
+  .map-layout{grid-template-columns:1fr;gap:40px}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:32px 24px}
+  .info-grid{grid-template-columns:1fr;gap:32px}
+  .payment-methods{grid-template-columns:1fr}
+  .cta-section{padding:100px 28px}
+  .footer{padding:32px 28px 80px;flex-direction:column;text-align:center}
+  .theme-switcher{bottom:20px;left:20px}
+  .whatsapp-btn{bottom:20px;right:20px}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:clamp(34px,13vw,52px)}
+  .section-title{font-size:clamp(32px,8vw,48px)}
+  .cursor-dot,.cursor-ring{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Grain -->
+<svg class="grain-overlay" viewBox="0 0 512 512" preserveAspectRatio="none">
+  <filter id="gf"><feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch"/></filter>
+  <rect width="100%" height="100%" filter="url(#gf)"/>
+</svg>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<canvas id="three-canvas"></canvas>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none"><path d="M18 2L4 10v16l14 8 14-8V10L18 2z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M18 6l-10 5.8v11.6L18 29l10-5.6V11.8L18 6z" fill="var(--fire)" opacity=".2"/><path d="M12 18h12M15 14h6M15 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    FITNESS EMPIRE
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="transformations.html">Results</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="compass.html">Compass</a></li>
+    <li><a href="bmi.html">BMI</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a><a href="story.html">Our Story</a><a href="classes.html">Classes</a>
+  <a href="transformations.html">Results</a><a href="contact.html">Contact</a>
+  <a href="compass.html">Compass</a><a href="bmi.html">BMI</a>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="hero-aurora"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+    <div class="hero-eyebrow">✦ Get In Touch</div>
+    <h1>THE EMPIRE<br><span class="fire">AWAITS.</span></h1>
+    <p class="hero-sub">Walk in, call us, or drop a message. However you reach out, the door is always open. Your first step starts with a conversation.</p>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="fi">
+        <div class="section-eyebrow">✦ Reach Us</div>
+        <h2 class="section-title">DIRECT<br>LINES</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card fi">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>WHATSAPP & CALL</h3>
+          <p>Talk to our team directly. Whether it's about memberships, class timings, or just getting started — we respond fast.</p>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="contact-action">✦ Message on WhatsApp</a>
+        </div>
+
+        <div class="contact-card fi">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>VISIT THE EMPIRE</h3>
+          <p>Barsana Market, near Yadav Chauraha, above New Azad Nagar, Satbari Road, Kanpur, UP 208011</p>
+          <a href="https://maps.google.com/?q=Fitness+Empire+Kanpur" target="_blank" rel="noopener noreferrer" class="contact-action">✦ Open in Maps</a>
+        </div>
+
+        <div class="contact-card fi">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>TRAINING HOURS</h3>
+          <p>Monday to Saturday: 6:00 AM – 10:00 PM<br>Sunday: Closed<br><br>Walk-ins welcome during all working hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP & ADDRESS -->
+  <section class="map-section">
+    <div class="map-inner">
+      <div class="fi">
+        <div class="section-eyebrow">✦ Find Us</div>
+        <h2 class="section-title">LOCATE THE<br>EMPIRE</h2>
+      </div>
+
+      <div class="map-layout fi">
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.5!2d80.35!3d26.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI3JzAwLjAiTiA4MMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fitness Empire Location"></iframe>
+        </div>
+
+        <div class="address-block">
+          <div class="address-item">
+            <div class="address-dot"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="address-text">
+              <h4>Full Address</h4>
+              <p>Barsana Market, near Yadav Chauraha,<br>above New Azad Nagar, Satbari Road,<br>Kanpur, Uttar Pradesh – 208011</p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <div class="address-dot"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+            <div class="address-text">
+              <h4>Landmarks</h4>
+              <p>Near Yadav Chauraha, above New Azad Nagar colony. Look for Barsana Market on Satbari Road — we are on the upper floor.</p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <div class="address-dot"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="address-text">
+              <h4>How to Reach</h4>
+              <p>10 minutes from Kanpur Central Railway Station. Auto-rickshaws and city buses available on Satbari Road. Parking space available nearby.</p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <div class="address-dot"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="address-text">
+              <h4>First Visit?</h4>
+              <p>Walk in anytime during working hours. Ask for a free facility tour and body composition check. No appointment needed — just show up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section class="form-section">
+    <div class="form-inner">
+      <div class="fi">
+        <div class="section-eyebrow">✦ Quick Enquiry</div>
+        <h2 class="section-title">SHARE YOUR<br>GOAL</h2>
+      </div>
+
+      <div class="form-card fi">
+        <form id="enquiryForm" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" id="eqName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" id="eqPhone" placeholder="Your phone number" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Goal</label>
+              <select class="form-input" id="eqGoal">
+                <option value="">Select your goal</option>
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Muscle Gain">Muscle Gain</option>
+                <option value="General Fitness">General Fitness</option>
+                <option value="Strength Training">Strength Training</option>
+                <option value="Self-Defence">Self-Defence</option>
+                <option value="Stress Relief">Stress Relief</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time</label>
+              <select class="form-input" id="eqTime">
+                <option value="">Select time</option>
+                <option value="Early Morning (6-8 AM)">Early Morning (6–8 AM)</option>
+                <option value="Morning (8-10 AM)">Morning (8–10 AM)</option>
+                <option value="Afternoon (12-4 PM)">Afternoon (12–4 PM)</option>
+                <option value="Evening (4-7 PM)">Evening (4–7 PM)</option>
+                <option value="Night (7-10 PM)">Night (7–10 PM)</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full">
+              <label class="form-label">Anything Else?</label>
+              <textarea class="form-input" id="eqMessage" placeholder="Any questions, medical conditions, or preferences..." rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <a href="#" id="formWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-primary">Send via WhatsApp</a>
+            <span style="font-family:var(--font-body);font-weight:300;font-size:13px;color:var(--muted)">We'll respond within the hour.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & PAYMENTS -->
+  <section class="info-section">
+    <div class="info-inner">
+      <div class="fi">
+        <div class="section-eyebrow">✦ Essentials</div>
+        <h2 class="section-title">HOURS &<br>PAYMENTS</h2>
+      </div>
+
+      <div class="info-grid">
+        <div class="hours-card fi">
+          <div class="hours-status" id="gymStatus">
+            <span class="status-pulse"></span>
+            <span id="statusText">Checking...</span>
+          </div>
+
+          <div class="hours-row">
+            <span class="hours-day">Monday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Tuesday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Wednesday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Thursday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Friday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">6:00 AM – 10:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time closed">Closed</span>
+          </div>
+        </div>
+
+        <div class="payments-card fi">
+          <h3 style="font-family:var(--font-headline);font-size:28px;color:var(--text);margin-bottom:24px">PAYMENT OPTIONS</h3>
+          <div class="payment-methods">
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+              <span class="payment-name">Cash</span>
+            </div>
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+              <span class="payment-name">Paytm</span>
+            </div>
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M14.31 8l-5.93 8h5.24l5.93-8z" fill="none"/></svg></div>
+              <span class="payment-name">PhonePe</span>
+            </div>
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12h8M12 8v8" stroke-width="2"/></svg></div>
+              <span class="payment-name">JioMoney</span>
+            </div>
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><path d="M20.49 3.51a12 12 0 10-17 17 12 12 0 0017-17z"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke-width="1.5"/></svg></div>
+              <span class="payment-name">Amazon Pay</span>
+            </div>
+            <div class="payment-item">
+              <div class="payment-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+              <span class="payment-name">UPI Transfer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="fi">
+      <h2>WALK IN.<br>WORK <span class="fire">OUT.</span></h2>
+      <p>Barsana Market, Satbari Road, Kanpur. Mon–Sat, 6 AM – 10 PM. The Empire is waiting for you.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Fitness%20Empire!%20I%20want%20to%20visit%20the%20gym." target="_blank" rel="noopener noreferrer" class="btn-primary">Message Us Now</a>
+        <a href="compass.html" class="btn-secondary">Take the Fitness Compass</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">&copy; 2024–2026 Fitness Empire, Kanpur. All rights reserved.</div>
+    <div class="footer-right"><a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a></div>
+  </footer>
+
+</div><!-- /.content -->
+
+<!-- WhatsApp -->
+<a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.478 2 2 6.478 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.94 9.94 0 0012 22c5.522 0 10-4.478 10-10S17.522 2 12 2zm0 18a7.94 7.94 0 01-4.106-1.14l-.29-.174-3.035.796.81-2.96-.192-.304A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+</a>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+  <div class="theme-dot active" data-theme="ember" title="Ember"></div>
+  <div class="theme-dot" data-theme="ash" title="Ash"></div>
+  <div class="theme-dot" data-theme="inferno" title="Inferno"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     THREE.JS — MELTING HEX DUMBBELL
+     ═══════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const canvas=document.getElementById('three-canvas');
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.35;
+
+  const scene=new THREE.Scene();
+  scene.background=new THREE.Color(.05,.038,.045);
+  const camera=new THREE.PerspectiveCamera(42,window.innerWidth/window.innerHeight,.1,100);
+  camera.position.set(4,0.6,8);camera.lookAt(0,0,0);
+
+  const vs=`
+    uniform float uTime,uMelt,uIsPlate;
+    varying float vHeat,vCrack;varying vec3 vPos,vNorm;
+    float hash(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
+    float n3(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+      return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),
+      mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
+    float mn(vec3 p,float t){return n3(p*2.+t*.3)*.5+n3(p*4.5+t*.5)*.3+n3(p*9.+t*.7)*.2;}
+    void main(){
+      vec3 p=position;float t=uTime;
+      float rd=length(p.xz),ef=uIsPlate*smoothstep(.3,1.1,rd);
+      float nv=mn(p,t),hr=clamp(uMelt*(.3+.7*ef)*nv,0.,1.);
+      float ml=.5-uMelt*2.,bm=smoothstep(ml,ml-.5,p.y);
+      p.y-=hr*1.25*uMelt*bm;
+      p.x+=sin(p.y*3.+t*1.5+nv*4.)*uMelt*.12*ef;
+      p.z+=cos(p.y*2.5+t*1.2)*uMelt*.08*ef;
+      p+=normal*nv*uMelt*.1;
+      float n2=n3(p*6.+t*.2);
+      vCrack=step(.74,nv)*step(.68,n2)*uMelt;
+      vHeat=hr;vPos=p;vNorm=normalMatrix*normal;
+      gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);
+    }`;
+
+  const fs=`
+    uniform float uTime,uMelt;
+    uniform vec3 uDarkSteel,uHotPrimary,uMidTone,uHighlight,uWhiteHot,uRimColor;
+    varying float vHeat,vCrack;varying vec3 vPos,vNorm;
+    void main(){
+      float h=vHeat;vec3 c;
+      if(h<.25)c=mix(uDarkSteel,uHotPrimary,h/.25);else if(h<.5)c=mix(uHotPrimary,uMidTone,(h-.25)/.25);
+      else if(h<.75)c=mix(uMidTone,uHighlight,(h-.5)/.25);else c=mix(uHighlight,uWhiteHot,(h-.75)/.25);
+      c=mix(c,mix(uMidTone,uWhiteHot,vCrack*.8),vCrack*.9);
+      vec3 vd=normalize(cameraPosition-vPos);float nv=max(dot(normalize(vNorm),vd),0.);
+      c+=uRimColor*pow(1.-nv,3.2)*uMelt*1.15;
+      c+=sin(vPos.y*12.+uTime*4.)*.04*uMelt;
+      c+=vec3(.6,.6,.7)*pow(nv,32.)*(1.-uMelt)*.5;
+      gl_FragColor=vec4(c,1.);
+    }`;
+
+  const dg=new THREE.Group();scene.add(dg);
+
+  /* ═══════ THEME COLOR PRESETS (Three.js) ═══════ */
+  const threeThemes={
+    ember:{
+      darkSteel:[.038,.038,.052],hotPrimary:[.92,.04,0],midTone:[1,.27,0],
+      highlight:[1,.74,.04],whiteHot:[1,.95,.8],rimColor:[.95,.2,0],
+      light1:0xE8380D,light2:0xFF6B2B,light3:0xC07A1A,
+      drip:0xFF6B2B,fire:0xE8380D,spark:0xFFAA44,pool:0xE8380D
+    },
+    ash:{
+      darkSteel:[.038,.038,.065],hotPrimary:[.15,.30,.82],midTone:[.32,.50,.92],
+      highlight:[.56,.72,1],whiteHot:[.85,.92,1],rimColor:[.20,.40,.95],
+      light1:0x6B8CDE,light2:0x8EAAEF,light3:0x4466AA,
+      drip:0x8EAAEF,fire:0x6B8CDE,spark:0xAABBFF,pool:0x6B8CDE
+    },
+    inferno:{
+      darkSteel:[.045,.030,.020],hotPrimary:[1,.12,0],midTone:[1,.35,0],
+      highlight:[1,.78,.08],whiteHot:[1,.97,.85],rimColor:[1,.27,0],
+      light1:0xFF4500,light2:0xFF6A33,light3:0xCC6600,
+      drip:0xFF6A33,fire:0xFF4500,spark:0xFFBB55,pool:0xFF4500
+    }
+  };
+  const _ct={
+    darkSteel:new THREE.Vector3(...threeThemes.ember.darkSteel),
+    hotPrimary:new THREE.Vector3(...threeThemes.ember.hotPrimary),
+    midTone:new THREE.Vector3(...threeThemes.ember.midTone),
+    highlight:new THREE.Vector3(...threeThemes.ember.highlight),
+    whiteHot:new THREE.Vector3(...threeThemes.ember.whiteHot),
+    rimColor:new THREE.Vector3(...threeThemes.ember.rimColor)
+  };
+  let _lt1=new THREE.Color(0xE8380D),_lt2=new THREE.Color(0xFF6B2B),_lt3=new THREE.Color(0xC07A1A);
+  let _ptDrip=new THREE.Color(0xFF6B2B),_ptFire=new THREE.Color(0xE8380D),_ptSpark=new THREE.Color(0xFFAA44),_ptPool=new THREE.Color(0xE8380D);
+  const mu={uTime:{value:0},uMelt:{value:.85},uIsPlate:{value:0},
+    uDarkSteel:{value:new THREE.Vector3(...threeThemes.ember.darkSteel)},
+    uHotPrimary:{value:new THREE.Vector3(...threeThemes.ember.hotPrimary)},
+    uMidTone:{value:new THREE.Vector3(...threeThemes.ember.midTone)},
+    uHighlight:{value:new THREE.Vector3(...threeThemes.ember.highlight)},
+    uWhiteHot:{value:new THREE.Vector3(...threeThemes.ember.whiteHot)},
+    uRimColor:{value:new THREE.Vector3(...threeThemes.ember.rimColor)}};
+  function cm(ip){return new THREE.ShaderMaterial({vertexShader:vs,fragmentShader:fs,uniforms:{uTime:mu.uTime,uMelt:mu.uMelt,uIsPlate:{value:ip?1:0},uDarkSteel:mu.uDarkSteel,uHotPrimary:mu.uHotPrimary,uMidTone:mu.uMidTone,uHighlight:mu.uHighlight,uWhiteHot:mu.uWhiteHot,uRimColor:mu.uRimColor}});}
+
+  const bar=new THREE.Mesh(new THREE.CylinderGeometry(.155,.155,3.6,18,12),cm(false));
+  bar.rotation.z=Math.PI/2;dg.add(bar);
+  for(let i=0;i<10;i++){const k=new THREE.Mesh(new THREE.TorusGeometry(.17,.02,8,18),cm(false));k.position.x=-0.9+i*.2;k.rotation.y=Math.PI/2;dg.add(k);}
+
+  function bs(s){
+    const co=new THREE.Mesh(new THREE.CylinderGeometry(.26,.26,.15,18,4),cm(false));
+    co.rotation.z=Math.PI/2;co.position.x=s*1.3;dg.add(co);
+    const sz=[{r:.6,d:.22},{r:.82,d:.28},{r:1.06,d:.34}];let o=1.5;
+    for(let i=0;i<3;i++){
+      const p=new THREE.Mesh(new THREE.CylinderGeometry(sz[i].r,sz[i].r,sz[i].d,6,8),cm(true));
+      p.rotation.z=Math.PI/2;p.position.x=s*o;dg.add(p);
+      const b=new THREE.Mesh(new THREE.TorusGeometry(sz[i].r*.95,.025,8,6),cm(true));
+      b.position.x=s*(o+sz[i].d*.52);b.rotation.y=Math.PI/2;dg.add(b);
+      if(i<2){const sp=new THREE.Mesh(new THREE.CylinderGeometry(.2,.2,.06,12,2),cm(false));sp.rotation.z=Math.PI/2;sp.position.x=s*(o+sz[i].d*.5+.05);dg.add(sp);}
+      o+=sz[i].d+.08;
+    }
+    const cap=new THREE.Mesh(new THREE.SphereGeometry(.18,12,12),cm(false));cap.position.x=s*(o+.05);dg.add(cap);
+  }
+  bs(1);bs(-1);
+
+  scene.add(new THREE.AmbientLight(0x222233,.5));
+  const l1=new THREE.PointLight(0xE8380D,3.5,25);l1.position.set(3,2,5);scene.add(l1);
+  const l2=new THREE.PointLight(0xFF6B2B,2,20);l2.position.set(-3,-1,4);scene.add(l2);
+  const l3=new THREE.PointLight(0xC07A1A,1.2,15);l3.position.set(0,3,-3);scene.add(l3);
+
+  const DC=50,dg2=new THREE.BufferGeometry(),dp=new Float32Array(DC*3),dv=new Float32Array(DC*3),dl=new Float32Array(DC);
+  for(let i=0;i<DC;i++){dp[i*3]=(Math.random()-.5)*2.5;dp[i*3+1]=-.3+Math.random()*.5;dp[i*3+2]=(Math.random()-.5)*1.5;dv[i*3+1]=-.008;dl[i]=Math.random();}
+  dg2.setAttribute('position',new THREE.BufferAttribute(dp,3));
+  const dm=new THREE.PointsMaterial({color:0xFF6B2B,size:.05,transparent:true,opacity:.6,blending:THREE.AdditiveBlending,depthWrite:false,sizeAttenuation:true});
+  const dpts=new THREE.Points(dg2,dm);scene.add(dpts);
+
+  const FC=60,fg=new THREE.BufferGeometry(),fp=new Float32Array(FC*3),fv=new Float32Array(FC*3),flf=new Float32Array(FC);
+  function rfp(i){fp[i*3]=(Math.random()-.5)*3;fp[i*3+1]=-1.5+Math.random()*.5;fp[i*3+2]=(Math.random()-.5)*2;fv[i*3]=(Math.random()-.5)*.01;fv[i*3+1]=.015+Math.random()*.02;fv[i*3+2]=(Math.random()-.5)*.01;flf[i]=Math.random();}
+  for(let i=0;i<FC;i++)rfp(i);
+  fg.setAttribute('position',new THREE.BufferAttribute(fp,3));
+  const fm=new THREE.PointsMaterial({color:0xE8380D,size:.035,transparent:true,opacity:.4,blending:THREE.AdditiveBlending,depthWrite:false,sizeAttenuation:true});
+  const fpts=new THREE.Points(fg,fm);scene.add(fpts);
+
+  const pm=new THREE.MeshBasicMaterial({color:0xE8380D,transparent:true,opacity:.1,blending:THREE.AdditiveBlending,depthWrite:false});
+  const pool=new THREE.Mesh(new THREE.CircleGeometry(1.8,32),pm);pool.rotation.x=-Math.PI/2;pool.position.y=-2;scene.add(pool);
+
+  let mmx=0,mmy=0;
+  document.addEventListener('mousemove',e=>{mmx=(e.clientX/window.innerWidth-.5)*2;mmy=(e.clientY/window.innerHeight-.5)*2;});
+
+  const clk=new THREE.Clock();
+
+  window.setThreeTheme=function(name){
+    const t=threeThemes[name]||threeThemes.ember;
+    _ct.darkSteel.set(...t.darkSteel);_ct.hotPrimary.set(...t.hotPrimary);
+    _ct.midTone.set(...t.midTone);_ct.highlight.set(...t.highlight);
+    _ct.whiteHot.set(...t.whiteHot);_ct.rimColor.set(...t.rimColor);
+    _lt1.set(t.light1);_lt2.set(t.light2);_lt3.set(t.light3);
+    _ptDrip.set(t.drip);_ptFire.set(t.fire);_ptSpark.set(t.spark);_ptPool.set(t.pool);
+  };
+
+  function anim(){
+    requestAnimationFrame(anim);
+    const _cl=.035;
+    mu.uDarkSteel.value.lerp(_ct.darkSteel,_cl);mu.uHotPrimary.value.lerp(_ct.hotPrimary,_cl);
+    mu.uMidTone.value.lerp(_ct.midTone,_cl);mu.uHighlight.value.lerp(_ct.highlight,_cl);
+    mu.uWhiteHot.value.lerp(_ct.whiteHot,_cl);mu.uRimColor.value.lerp(_ct.rimColor,_cl);
+    l1.color.lerp(_lt1,_cl);l2.color.lerp(_lt2,_cl);l3.color.lerp(_lt3,_cl);
+    dm.color.lerp(_ptDrip,_cl);fm.color.lerp(_ptFire,_cl);pm.color.lerp(_ptPool,_cl);
+    const t=clk.getElapsedTime();mu.uTime.value=t;
+    dg.rotation.y+=.002;dg.position.y=Math.sin(t*.72)*.08;dg.rotation.x=mmy*.06;
+    camera.position.x=4+mmx*.4;camera.position.y=.6+mmy*.3;camera.lookAt(0,0,0);
+    l1.intensity=3.5+Math.sin(t*3.2)*.3;l2.intensity=2+Math.sin(t*2.7)*.2;
+
+    const da=dpts.geometry.attributes.position.array;
+    for(let i=0;i<DC;i++){dl[i]-=.004;if(dl[i]<=0||da[i*3+1]<-3){da[i*3]=(Math.random()-.5)*2.5;da[i*3+1]=-.3+Math.random()*.5;da[i*3+2]=(Math.random()-.5)*1.5;dv[i*3+1]=-.008;dl[i]=.5+Math.random()*.5;}dv[i*3+1]-=.0004;da[i*3+1]+=dv[i*3+1];}
+    dpts.geometry.attributes.position.needsUpdate=true;
+
+    const fa=fpts.geometry.attributes.position.array;
+    for(let i=0;i<FC;i++){flf[i]-=.008;if(flf[i]<=0)rfp(i);fa[i*3]+=fv[i*3];fa[i*3+1]+=fv[i*3+1];fa[i*3+2]+=fv[i*3+2];}
+    fpts.geometry.attributes.position.needsUpdate=true;
+    fm.opacity=mu.uMelt.value>.42?Math.min(.5,(mu.uMelt.value-.42)*2):0;
+
+    pool.scale.setScalar(1+Math.sin(t*2)*.04);
+    renderer.render(scene,camera);
+  }
+  anim();
+
+  window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);});
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════
+     UI JS
+     ═══════════════════════════════════════════ -->
+<script>
+(function(){
+  'use strict';
+
+  // Cursor
+  const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+  let dx=0,dy=0,rx=0,ry=0,cmx=0,cmy=0;
+  document.addEventListener('mousemove',e=>{cmx=e.clientX;cmy=e.clientY;});
+  function ac(){dx+=(cmx-dx)*.35;dy+=(cmy-dy)*.35;rx+=(cmx-rx)*.12;ry+=(cmy-ry)*.12;
+    dot.style.left=dx+'px';dot.style.top=dy+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ac);}
+  ac();
+  document.querySelectorAll('a,button,.contact-card,.payment-item,.theme-dot,.form-input').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+  });
+
+  // Scroll progress
+  window.addEventListener('scroll',()=>{
+    document.getElementById('scrollProgress').style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%';
+  });
+
+  // Navbar
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);});
+
+  // Mobile menu
+  document.getElementById('navHamburger').addEventListener('click',()=>{
+    const m=document.getElementById('mobileMenu');m.classList.add('active');
+    m.querySelectorAll('a').forEach((l,i)=>{l.style.transitionDelay=(.1+i*.06)+'s';});
+  });
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('active'));
+
+  // Hero entrance
+  window.addEventListener('load',()=>setTimeout(()=>document.querySelector('.hero').classList.add('loaded'),200));
+
+  // Intersection
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+  // Live open/closed status
+  function checkStatus(){
+    const now=new Date();
+    // IST offset
+    const ist=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+    const day=ist.getDay(); // 0=Sun
+    const h=ist.getHours();
+    const statusEl=document.getElementById('gymStatus');
+    const textEl=document.getElementById('statusText');
+
+    if(day===0){
+      statusEl.classList.add('closed-now');
+      textEl.textContent='Closed Today';
+    } else if(h>=6 && h<22){
+      statusEl.classList.remove('closed-now');
+      textEl.textContent='Open Now';
+    } else {
+      statusEl.classList.add('closed-now');
+      textEl.textContent='Closed Now';
+    }
+  }
+  checkStatus();
+
+  // WhatsApp form submission
+  document.getElementById('formWhatsApp').addEventListener('click',function(e){
+    const name=document.getElementById('eqName').value.trim();
+    const phone=document.getElementById('eqPhone').value.trim();
+    const goal=document.getElementById('eqGoal').value;
+    const time=document.getElementById('eqTime').value;
+    const msg=document.getElementById('eqMessage').value.trim();
+
+    if(!name||!phone){
+      e.preventDefault();
+      alert('Please enter your name and phone number.');
+      return;
+    }
+
+    let text=`Hi Fitness Empire! I'd like to enquire about membership.\n\nName: ${name}\nPhone: ${phone}`;
+    if(goal) text+=`\nGoal: ${goal}`;
+    if(time) text+=`\nPreferred Time: ${time}`;
+    if(msg) text+=`\nMessage: ${msg}`;
+
+    this.href=`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(text)}`;
+  });
+
+  // Theme switcher
+  document.querySelectorAll('.theme-dot').forEach(d=>{
+    d.addEventListener('click',()=>{
+      document.querySelectorAll('.theme-dot').forEach(x=>x.classList.remove('active'));
+      d.classList.add('active');
+      if(d.dataset.theme==='ember')document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme',d.dataset.theme);
+      if(typeof window.setThreeTheme==='function')window.setThreeTheme(d.dataset.theme);
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

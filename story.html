@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Fitness Empire Kanpur</title>
+<meta name="description" content="Built for the ones who show up. The founding story of Fitness Empire — Kanpur's highest-rated gym, born in 2024.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   CSS RESET & VARIABLES
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0B0B0D;
+  --fire: #E8380D;
+  --ember: #FF6B2B;
+  --gold: #C07A1A;
+  --ash: #131315;
+  --ash2: #1C1C20;
+  --text: #F0EDE8;
+  --muted: rgba(240,237,232,.44);
+  --border: rgba(232,56,13,.14);
+  --radius: 16px;
+  --font-headline: 'Bebas Neue', sans-serif;
+  --font-nav: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+[data-theme="ash"] {
+  --fire: #6B8CDE;
+  --ember: #8EAAEF;
+  --bg: #0C0C10;
+  --border: rgba(107,140,222,.14);
+}
+
+[data-theme="inferno"] {
+  --fire: #FF4500;
+  --ember: #FF6A33;
+  --bg: #0A0300;
+  --border: rgba(255,69,0,.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  cursor: none;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+*, *::before, *::after { cursor: none !important; }
+
+/* ═══════════════════════════════════════════
+   CUSTOM CURSOR
+   ═══════════════════════════════════════════ */
+.cursor-dot {
+  position: fixed;
+  width: 7px; height: 7px;
+  background: var(--fire);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 12px var(--fire), 0 0 24px rgba(232,56,13,.4);
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 34px; height: 34px;
+  border: 1.5px solid rgba(232,56,13,.46);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring.hover { width: 48px; height: 48px; border-color: var(--fire); }
+
+/* ═══════════════════════════════════════════
+   SCROLL PROGRESS BAR
+   ═══════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, var(--fire), var(--ember), var(--gold));
+  z-index: 99997;
+  box-shadow: 0 0 10px var(--fire), 0 0 20px rgba(232,56,13,.3);
+}
+
+/* ═══════════════════════════════════════════
+   GRAIN OVERLAY
+   ═══════════════════════════════════════════ */
+.grain-overlay {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 9998;
+  opacity: 0.042;
+}
+
+/* ═══════════════════════════════════════════
+   THREE.JS CANVAS
+   ═══════════════════════════════════════════ */
+#three-canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1; pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9990;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 40px;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+
+.navbar.scrolled {
+  backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+  background: rgba(11,11,13,.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-headline); font-size: 28px;
+  letter-spacing: 2px; color: var(--text);
+  text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+
+.nav-logo .logo-icon { width: 36px; height: 36px; }
+
+.nav-links {
+  display: flex; gap: 32px; list-style: none; align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-nav); font-weight: 700; font-size: 12px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.25s ease; position: relative;
+}
+
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--fire);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-links a.active { color: var(--fire); }
+.nav-links a.active::after { width: 100%; }
+
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; padding: 8px;
+}
+
+.nav-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu {
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(11,11,13,.96);
+  backdrop-filter: blur(40px); z-index: 9989;
+  flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+}
+
+.mobile-menu.active { display: flex; }
+
+.mobile-menu a {
+  font-family: var(--font-headline); font-size: 42px;
+  letter-spacing: 3px; color: var(--text); text-decoration: none;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.25s ease;
+}
+
+.mobile-menu.active a { opacity: 1; transform: translateY(0); }
+.mobile-menu a:hover { color: var(--fire); }
+
+.mobile-close {
+  position: absolute; top: 24px; right: 32px;
+  background: none; border: none; color: var(--text);
+  font-size: 32px; font-family: var(--font-nav);
+}
+
+/* ═══════════════════════════════════════════
+   CONTENT
+   ═══════════════════════════════════════════ */
+.content { position: relative; z-index: 10; }
+
+/* ═══════════════════════════════════════════
+   INTERSECTION OBSERVER FADE
+   ═══════════════════════════════════════════ */
+.fi {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.fi.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px; background: var(--fire); color: #fff;
+  font-family: var(--font-nav); font-weight: 800; font-size: 13px;
+  letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+  border: none; border-radius: var(--radius);
+  box-shadow: 0 0 24px rgba(232,56,13,.35), 0 0 48px rgba(232,56,13,.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: firePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes firePulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(232,56,13,.35), 0 0 48px rgba(232,56,13,.15); }
+  50% { box-shadow: 0 0 32px rgba(232,56,13,.55), 0 0 64px rgba(232,56,13,.25); }
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(232,56,13,.55), 0 0 72px rgba(232,56,13,.3); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px;
+  background: rgba(240,237,232,.06); backdrop-filter: blur(20px);
+  color: var(--text); font-family: var(--font-nav); font-weight: 700;
+  font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+  text-decoration: none; border: 1px solid rgba(240,237,232,.12);
+  border-radius: var(--radius);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-secondary:hover { transform: translateY(-2px); background: rgba(240,237,232,.10); border-color: rgba(240,237,232,.22); }
+
+/* ═══════════════════════════════════════════
+   HERO — FULL HEIGHT
+   ═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 140px 60px 100px;
+  position: relative; overflow: hidden;
+}
+
+.hero-aurora {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden; pointer-events: none;
+}
+
+.hero-aurora .blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(120px);
+  animation: auroraFloat 12s ease-in-out infinite alternate;
+}
+
+.hero-aurora .blob-1 {
+  width: 600px; height: 600px;
+  background: rgba(232,56,13,.12);
+  top: -20%; left: 20%;
+}
+
+.hero-aurora .blob-2 {
+  width: 500px; height: 500px;
+  background: rgba(255,107,43,.08);
+  bottom: -10%; right: 10%;
+  animation-delay: -4s;
+}
+
+@keyframes auroraFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.05); }
+  100% { transform: translate(-10px, 10px) scale(0.98); }
+}
+
+.hero-eyebrow {
+  font-family: var(--font-nav); font-weight: 700; font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--fire); margin-bottom: 28px;
+  opacity: 0; transform: translateY(20px);
+}
+
+.hero h1 {
+  font-family: var(--font-headline);
+  font-size: clamp(52px, 9vw, 120px);
+  line-height: 0.95; letter-spacing: -1px;
+  color: var(--text); max-width: 1000px;
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(30px);
+}
+
+.hero h1 .fire { color: var(--fire); }
+
+.hero-sub {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: clamp(16px, 2vw, 20px); color: var(--muted);
+  max-width: 560px; line-height: 1.65; margin-bottom: 20px;
+  opacity: 0; transform: translateY(20px);
+}
+
+.hero.loaded .hero-eyebrow { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded h1 { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.4s ease, transform 0.7s 0.4s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded .hero-sub { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.6s ease, transform 0.7s 0.6s cubic-bezier(0.16,1,0.3,1); }
+
+/* ═══════════════════════════════════════════
+   SECTION STYLING UTILITIES
+   ═══════════════════════════════════════════ */
+.section-eyebrow {
+  font-family: var(--font-nav); font-weight: 700; font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--fire); margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-headline);
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1; color: var(--text); margin-bottom: 60px;
+}
+
+/* ═══════════════════════════════════════════
+   FOUNDING NARRATIVE
+   ═══════════════════════════════════════════ */
+.narrative-section {
+  padding: 120px 60px;
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 80px; align-items: start;
+}
+
+.narrative-sticky {
+  position: sticky; top: 140px;
+}
+
+.narrative-quote {
+  font-family: var(--font-headline);
+  font-size: clamp(32px, 4.5vw, 52px);
+  line-height: 1.1; color: var(--text);
+  margin-bottom: 24px;
+}
+
+.narrative-quote .fire { color: var(--fire); }
+
+.narrative-quote-line {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--fire), var(--ember));
+  border-radius: 4px; margin-top: 24px;
+}
+
+.narrative-body p {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 16px; line-height: 1.8; color: var(--muted);
+  margin-bottom: 28px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+.narrative-body p strong {
+  font-weight: 500; color: var(--text);
+}
+
+/* ═══════════════════════════════════════════
+   VALUES CARDS
+   ═══════════════════════════════════════════ */
+.values-section {
+  padding: 120px 60px;
+  max-width: 1400px; margin: 0 auto;
+}
+
+.values-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px; margin-top: 60px;
+}
+
+.value-card {
+  background: rgba(240,237,232,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 44px 32px; text-align: center;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  position: relative; overflow: hidden;
+}
+
+.value-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(232,56,13,.06), transparent 70%);
+  opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+}
+
+.value-card:hover {
+  border-color: rgba(232,56,13,.35);
+  box-shadow: 0 0 40px rgba(232,56,13,.08);
+  transform: translateY(-4px);
+}
+
+.value-card:hover::before { opacity: 1; }
+
+.value-icon {
+  font-size: 36px; color: var(--fire);
+  margin-bottom: 20px; display: block;
+  font-style: normal;
+}
+
+.value-card h3 {
+  font-family: var(--font-headline); font-size: 32px;
+  letter-spacing: 1px; color: var(--text); margin-bottom: 14px;
+}
+
+.value-card p {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 14px; line-height: 1.7; color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   MILESTONE TIMELINE
+   ═══════════════════════════════════════════ */
+.timeline-section {
+  padding: 120px 60px;
+  max-width: 1100px; margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 48px;
+}
+
+.timeline::before {
+  content: ''; position: absolute;
+  left: 16px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--fire), var(--ember), rgba(232,56,13,.1));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 64px;
+  padding-left: 32px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -40px; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--fire);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 3px rgba(232,56,13,.3), 0 0 12px rgba(232,56,13,.4);
+  z-index: 2;
+}
+
+.timeline-date {
+  font-family: var(--font-nav); font-weight: 800;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--fire); margin-bottom: 8px;
+}
+
+.timeline-title {
+  font-family: var(--font-headline); font-size: 32px;
+  letter-spacing: 1px; color: var(--text); margin-bottom: 10px;
+}
+
+.timeline-desc {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 15px; line-height: 1.7; color: var(--muted);
+  max-width: 600px;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+
+/* Timeline animated line fill */
+.timeline-fill {
+  position: absolute;
+  left: 16px; top: 0;
+  width: 2px; height: 0;
+  background: var(--fire);
+  border-radius: 2px;
+  transition: height 0.1s linear;
+  z-index: 1;
+  box-shadow: 0 0 8px rgba(232,56,13,.3);
+}
+
+/* ═══════════════════════════════════════════
+   FACILITIES SCROLL
+   ═══════════════════════════════════════════ */
+.facilities-section {
+  padding: 120px 60px;
+  max-width: 1400px; margin: 0 auto;
+}
+
+.facilities-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 60px;
+}
+
+.facility-card {
+  background: rgba(240,237,232,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.facility-card:hover {
+  border-color: rgba(232,56,13,.3);
+  transform: translateY(-4px);
+}
+
+.facility-card h3 {
+  font-family: var(--font-headline); font-size: 28px;
+  letter-spacing: 1px; color: var(--text); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+
+.facility-card h3 .icon { color: var(--fire); font-style: normal; }
+
+.facility-card p {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 15px; line-height: 1.7; color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════════════ */
+.cta-section {
+  padding: 160px 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+
+.cta-section::before {
+  content: ''; position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(232,56,13,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-family: var(--font-headline);
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 0.95; color: var(--text);
+  margin-bottom: 24px; position: relative; z-index: 2;
+}
+
+.cta-section h2 .fire { color: var(--fire); }
+
+.cta-section p {
+  font-family: var(--font-body); font-weight: 300; font-size: 18px;
+  color: var(--muted); margin-bottom: 48px;
+  max-width: 540px; margin-left: auto; margin-right: auto;
+  position: relative; z-index: 2;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+.cta-buttons {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 2;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  padding: 48px 100px 48px 140px;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+
+.footer-left {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 13px; color: var(--muted);
+}
+
+.footer-right a {
+  font-family: var(--font-body); font-weight: 300;
+  font-size: 13px; color: var(--muted); text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-right a:hover { color: var(--text); }
+
+/* ═══════════════════════════════════════════
+   WHATSAPP
+   ═══════════════════════════════════════════ */
+.whatsapp-btn {
+  position: fixed; bottom: 32px; right: 32px; z-index: 9995;
+  width: 56px; height: 56px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,.35);
+  transition: transform 0.25s ease;
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+.whatsapp-btn:hover { transform: scale(1.08); }
+.whatsapp-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.35), 0 0 0 0 rgba(37,211,102,.3); }
+  50% { box-shadow: 0 4px 20px rgba(37,211,102,.35), 0 0 0 14px rgba(37,211,102,0); }
+}
+
+/* ═══════════════════════════════════════════
+   THEME SWITCHER
+   ═══════════════════════════════════════════ */
+.theme-switcher {
+  position: fixed; bottom: 32px; left: 32px; z-index: 9995;
+  display: flex; gap: 10px;
+  background: rgba(240,237,232,.05); border: 1px solid var(--border);
+  border-radius: 50px; padding: 8px 12px;
+  backdrop-filter: blur(12px);
+}
+
+.theme-dot {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(240,237,232,.15);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.theme-dot:hover { transform: scale(1.15); }
+.theme-dot.active { border-color: var(--text); }
+.theme-dot[data-theme="ember"] { background: #E8380D; }
+.theme-dot[data-theme="ash"] { background: #6B8CDE; }
+.theme-dot[data-theme="inferno"] { background: #FF4500; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero { padding: 120px 28px 80px; }
+  .hero h1 { font-size: clamp(40px, 11vw, 72px); }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .navbar { padding: 14px 24px; }
+
+  .narrative-section {
+    grid-template-columns: 1fr; gap: 40px; padding: 80px 28px;
+  }
+  .narrative-sticky { position: static; }
+
+  .values-section { padding: 80px 28px; }
+  .values-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .timeline-section { padding: 80px 28px; }
+
+  .facilities-section { padding: 80px 28px; }
+  .facilities-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .cta-section { padding: 100px 28px; }
+
+  .footer { padding: 32px 28px 80px; flex-direction: column; text-align: center; }
+
+  .theme-switcher { bottom: 20px; left: 20px; }
+  .whatsapp-btn { bottom: 20px; right: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(34px, 13vw, 52px); }
+  .values-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: clamp(32px, 8vw, 48px); }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Grain -->
+<svg class="grain-overlay" viewBox="0 0 512 512" preserveAspectRatio="none">
+  <filter id="grain-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+</svg>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Three.js Canvas -->
+<canvas id="three-canvas"></canvas>
+
+<!-- Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 2L4 10v16l14 8 14-8V10L18 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M18 6l-10 5.8v11.6L18 29l10-5.6V11.8L18 6z" fill="var(--fire)" opacity="0.2"/>
+      <path d="M12 18h12M15 14h6M15 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    FITNESS EMPIRE
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html" class="active">Our Story</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="transformations.html">Results</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="compass.html">Compass</a></li>
+    <li><a href="bmi.html">BMI</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="classes.html">Classes</a>
+  <a href="transformations.html">Results</a>
+  <a href="contact.html">Contact</a>
+  <a href="compass.html">Compass</a>
+  <a href="bmi.html">BMI</a>
+</div>
+
+<!-- ═══════ CONTENT ═══════ -->
+<div class="content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="hero-aurora">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-eyebrow">✦ The Origin</div>
+    <h1>BUILT FOR THE<br>ONES WHO<br><span class="fire">SHOW UP.</span></h1>
+    <p class="hero-sub">Not a franchise. Not a chain. Fitness Empire was born from one idea — Kanpur deserves a gym that matches the relentless drive of its people.</p>
+  </section>
+
+  <!-- FOUNDING NARRATIVE -->
+  <section class="narrative-section" id="narrative-section">
+    <div class="narrative-sticky fi">
+      <div class="narrative-quote">"Kanpur had gyms. It didn't have a <span class="fire">training ground.</span>"</div>
+      <div class="narrative-quote-line"></div>
+    </div>
+    <div class="narrative-body fi">
+      <p>In 2024, Fitness Empire opened its doors near Yadav Chauraha on Satbari Road — not because the city lacked gyms, but because it lacked <strong>the right one.</strong> A place where the equipment is premium, the coaching is relentless, and the culture pushes everyone to show up better than yesterday.</p>
+      <p>The founder had seen too many places cut corners: machines that stayed broken, trainers who watched their phones, members who came and went because no one gave them a reason to stay. Fitness Empire was the answer to every one of those failures.</p>
+      <p>From day one, the mission was clear: <strong>create an environment where discipline is the standard, not the exception.</strong> Build a space where beginners feel guided and athletes feel challenged. Offer every form of training — from raw iron to Zumba, from Yoga to kickboxing — under one roof, coached by people who actually care.</p>
+      <p>The name was not an accident. An empire is not built in a day. It is built rep by rep, set by set, member by member. And Kanpur took notice. Within months, Fitness Empire earned a perfect 5.0 rating on Google — not because of marketing, but because results speak louder than ads.</p>
+      <p>This is not a gym story. <strong>This is a Kanpur story.</strong> A story about what happens when a city full of fire finally gets a place that matches its heat.</p>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section" id="values-section">
+    <div class="fi">
+      <div class="section-eyebrow">✦ What We Stand For</div>
+      <h2 class="section-title">THE FOUR PILLARS OF<br>THE EMPIRE</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fi">
+        <span class="value-icon">✦</span>
+        <h3>DISCIPLINE</h3>
+        <p>Discipline is not punishment — it is freedom. The freedom to trust your body, your routine, and your process. We build it into every session, every schedule, every expectation.</p>
+      </div>
+      <div class="value-card fi">
+        <span class="value-icon">◆</span>
+        <h3>COMMUNITY</h3>
+        <p>You train alone. You never stand alone. Every member of the Empire lifts each other — literally and figuratively. The energy here is contagious because the people here mean it.</p>
+      </div>
+      <div class="value-card fi">
+        <span class="value-icon">◇</span>
+        <h3>PROGRESS</h3>
+        <p>We do not chase perfection. We chase progress — measurable, visible, undeniable. Every workout tracked, every milestone celebrated, every setback addressed with a plan.</p>
+      </div>
+      <div class="value-card fi">
+        <span class="value-icon">◈</span>
+        <h3>POWER</h3>
+        <p>Not just physical. The power to decide who you become. The power to walk in one version of yourself and walk out another. That is what Fitness Empire exists to unlock.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MILESTONE TIMELINE -->
+  <section class="timeline-section" id="timeline-section">
+    <div class="fi">
+      <div class="section-eyebrow">✦ Milestones</div>
+      <h2 class="section-title">THE EMPIRE<br>TIMELINE</h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline-fill" id="timelineFill"></div>
+
+      <div class="timeline-item fi">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Early 2024</div>
+        <h3 class="timeline-title">THE VISION</h3>
+        <p class="timeline-desc">The idea takes shape — Kanpur needs a gym that refuses to compromise. Scouting begins for the perfect location near Yadav Chauraha, Satbari Road.</p>
+      </div>
+
+      <div class="timeline-item fi">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Mid 2024</div>
+        <h3 class="timeline-title">DOORS OPEN</h3>
+        <p class="timeline-desc">Fitness Empire launches above New Azad Nagar in Barsana Market. Premium equipment installed, coaches hired, and the first members walk through the door.</p>
+      </div>
+
+      <div class="timeline-item fi">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Late 2024</div>
+        <h3 class="timeline-title">5.0 STARS ON GOOGLE</h3>
+        <p class="timeline-desc">Within months, perfect ratings flood in. Word of mouth becomes the strongest marketing — members bring friends, friends become family.</p>
+      </div>
+
+      <div class="timeline-item fi">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Early 2025</div>
+        <h3 class="timeline-title">CLASSES EXPAND</h3>
+        <p class="timeline-desc">Kickboxing, Zumba, Yoga, and CrossFit classes launch alongside weight training. Fitness Empire becomes a full-spectrum training ground.</p>
+      </div>
+
+      <div class="timeline-item fi">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025 – Present</div>
+        <h3 class="timeline-title">THE EMPIRE GROWS</h3>
+        <p class="timeline-desc">Personal training and nutrition consulting added. Rated 4.7 on Justdial. The Empire is not just a gym — it is the benchmark for fitness in Kanpur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="facilities-section" id="facilities-section">
+    <div class="fi">
+      <div class="section-eyebrow">✦ The Space</div>
+      <h2 class="section-title">BUILT TO<br>PERFORM</h2>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> PREMIUM EQUIPMENT</h3>
+        <p>Every rack, every cable machine, every dumbbell — sourced for durability and performance. No rusted plates, no broken pulleys. If it is on the floor, it works.</p>
+      </div>
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> DEDICATED CLASS ZONES</h3>
+        <p>Separate areas for Zumba, Yoga, and martial arts. Padded floors, mirror walls, and sound systems that turn every class into an experience, not just a workout.</p>
+      </div>
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> STRENGTH FLOOR</h3>
+        <p>The heart of the Empire. Power racks, flat and incline benches, plate-loaded leg press, cables from every angle — everything a serious lifter demands.</p>
+      </div>
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> COACHED ATMOSPHERE</h3>
+        <p>Trainers walk the floor. Not sitting at desks — walking, watching, correcting form, pushing harder. Every rep gets attention because every rep matters.</p>
+      </div>
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> CLEAN & MAINTAINED</h3>
+        <p>Spotless floors, sanitized equipment, and a space that smells like discipline — not neglect. Cleanliness is not optional. It is a rule, enforced daily.</p>
+      </div>
+      <div class="facility-card fi">
+        <h3><span class="icon">◈</span> 16 HOURS OF ACCESS</h3>
+        <p>Monday through Saturday, 6:00 AM to 10:00 PM. Whether you are a 6 AM warrior or a 9 PM grinder, the Empire is open when you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" id="cta-section">
+    <div class="fi">
+      <h2>BECOME PART<br>OF THE <span class="fire">EMPIRE</span></h2>
+      <p>The doors are open. The weights are loaded. The only thing missing is you. Walk in today and start writing your chapter in the Empire's story.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20join%20Fitness%20Empire" target="_blank" rel="noopener noreferrer" class="btn-primary">Join Now</a>
+        <a href="classes.html" class="btn-secondary">See Classes & Schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">&copy; 2024–2026 Fitness Empire, Kanpur. All rights reserved.</div>
+    <div class="footer-right">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Fitness%20Empire!%20I'm%20interested%20in%20joining." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+  <div class="theme-dot active" data-theme="ember" title="Ember"></div>
+  <div class="theme-dot" data-theme="ash" title="Ash"></div>
+  <div class="theme-dot" data-theme="inferno" title="Inferno"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     THREE.JS — SLOWLY ROTATING DUMBBELL (~0.3 melt)
+     ═══════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  const canvas = document.getElementById('three-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.35;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0.042, 0.034, 0.042);
+  const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(5.5, 1.0, 8.5);
+  camera.lookAt(0, 0, 0);
+
+  /* ═══════ SHADERS ═══════ */
+  const vertexShader = `
+    uniform float uTime;
+    uniform float uMelt;
+    uniform float uIsPlate;
+    varying float vHeat;
+    varying float vCrack;
+    varying vec3 vPos;
+    varying vec3 vNorm;
+
+    float hash(vec3 p) {
+      p = fract(p * 0.3183099 + 0.1);
+      p *= 17.0;
+      return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+    }
+
+    float noise3D(vec3 p) {
+      vec3 i = floor(p); vec3 f = fract(p);
+      f = f * f * (3.0 - 2.0 * f);
+      return mix(
+        mix(mix(hash(i), hash(i+vec3(1,0,0)), f.x),
+            mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x),
+            mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y), f.z);
+    }
+
+    float multiNoise(vec3 p, float t) {
+      float n = noise3D(p*2.0+t*0.3)*0.5;
+      n += noise3D(p*4.5+t*0.5)*0.3;
+      n += noise3D(p*9.0+t*0.7)*0.2;
+      return n;
+    }
+
+    void main() {
+      vec3 p = position;
+      float t = uTime;
+      float radialDist = length(p.xz);
+      float edgeFactor = uIsPlate * smoothstep(0.3, 1.1, radialDist);
+      float nVal = multiNoise(p, t);
+      float heatRaw = uMelt * (0.3 + 0.7 * edgeFactor) * nVal;
+      heatRaw = clamp(heatRaw, 0.0, 1.0);
+      float meltLine = 0.5 - uMelt * 2.0;
+      float belowMelt = smoothstep(meltLine, meltLine - 0.5, p.y);
+      p.y -= heatRaw * 1.25 * uMelt * belowMelt;
+      float wobble = sin(p.y*3.0+t*1.5+nVal*4.0)*uMelt*0.12;
+      p.x += wobble * edgeFactor;
+      p.z += cos(p.y*2.5+t*1.2)*uMelt*0.08*edgeFactor;
+      p += normal * nVal * uMelt * 0.1;
+      float n2 = noise3D(p*6.0+t*0.2);
+      float crack = step(0.74, nVal)*step(0.68, n2)*uMelt;
+      vHeat = heatRaw; vCrack = crack; vPos = p; vNorm = normalMatrix * normal;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+    }
+  `;
+
+  const fragmentShader = `
+    uniform float uTime;
+    uniform float uMelt;
+    uniform vec3 uDarkSteel, uHotPrimary, uMidTone, uHighlight, uWhiteHot, uRimColor;
+    varying float vHeat;
+    varying float vCrack;
+    varying vec3 vPos;
+    varying vec3 vNorm;
+
+    void main() {
+      float h = vHeat;
+      vec3 col;
+      if (h < 0.25) col = mix(uDarkSteel, uHotPrimary, h/0.25);
+      else if (h < 0.5) col = mix(uHotPrimary, uMidTone, (h-0.25)/0.25);
+      else if (h < 0.75) col = mix(uMidTone, uHighlight, (h-0.5)/0.25);
+      else col = mix(uHighlight, uWhiteHot, (h-0.75)/0.25);
+      vec3 crackColor = mix(uMidTone, uWhiteHot, vCrack*0.8);
+      col = mix(col, crackColor, vCrack*0.9);
+      vec3 viewDir = normalize(cameraPosition - vPos);
+      float NdotV = max(dot(normalize(vNorm), viewDir), 0.0);
+      float fresnel = pow(1.0-NdotV, 3.2)*uMelt*1.15;
+      col += uRimColor*fresnel;
+      float shimmer = sin(vPos.y*12.0+uTime*4.0)*0.04*uMelt;
+      col += shimmer;
+      float spec = pow(NdotV, 32.0)*(1.0-uMelt)*0.5;
+      col += vec3(0.6,0.6,0.7)*spec;
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  /* ═══════ BUILD DUMBBELL ═══════ */
+  const dumbbellGroup = new THREE.Group();
+  scene.add(dumbbellGroup);
+
+
+  /* ═══════ THEME COLOR PRESETS (Three.js) ═══════ */
+  const threeThemes={
+    ember:{
+      darkSteel:[.038,.038,.052],hotPrimary:[.92,.04,0],midTone:[1,.27,0],
+      highlight:[1,.74,.04],whiteHot:[1,.95,.8],rimColor:[.95,.2,0],
+      light1:0xE8380D,light2:0xFF6B2B,light3:0xC07A1A,
+      drip:0xFF6B2B,fire:0xE8380D,spark:0xFFAA44,pool:0xE8380D
+    },
+    ash:{
+      darkSteel:[.038,.038,.065],hotPrimary:[.15,.30,.82],midTone:[.32,.50,.92],
+      highlight:[.56,.72,1],whiteHot:[.85,.92,1],rimColor:[.20,.40,.95],
+      light1:0x6B8CDE,light2:0x8EAAEF,light3:0x4466AA,
+      drip:0x8EAAEF,fire:0x6B8CDE,spark:0xAABBFF,pool:0x6B8CDE
+    },
+    inferno:{
+      darkSteel:[.045,.030,.020],hotPrimary:[1,.12,0],midTone:[1,.35,0],
+      highlight:[1,.78,.08],whiteHot:[1,.97,.85],rimColor:[1,.27,0],
+      light1:0xFF4500,light2:0xFF6A33,light3:0xCC6600,
+      drip:0xFF6A33,fire:0xFF4500,spark:0xFFBB55,pool:0xFF4500
+    }
+  };
+  const _ct={
+    darkSteel:new THREE.Vector3(...threeThemes.ember.darkSteel),
+    hotPrimary:new THREE.Vector3(...threeThemes.ember.hotPrimary),
+    midTone:new THREE.Vector3(...threeThemes.ember.midTone),
+    highlight:new THREE.Vector3(...threeThemes.ember.highlight),
+    whiteHot:new THREE.Vector3(...threeThemes.ember.whiteHot),
+    rimColor:new THREE.Vector3(...threeThemes.ember.rimColor)
+  };
+  let _lt1=new THREE.Color(0xE8380D),_lt2=new THREE.Color(0xFF6B2B),_lt3=new THREE.Color(0xC07A1A);
+  let _ptDrip=new THREE.Color(0xFF6B2B),_ptFire=new THREE.Color(0xE8380D),_ptSpark=new THREE.Color(0xFFAA44),_ptPool=new THREE.Color(0xE8380D);
+
+  const meltUniforms = {
+    uTime: { value: 0 },
+    uMelt: { value: 0.85 },
+    uIsPlate: { value: 0.0 },
+    uDarkSteel:  { value: new THREE.Vector3(...threeThemes.ember.darkSteel) },
+    uHotPrimary: { value: new THREE.Vector3(...threeThemes.ember.hotPrimary) },
+    uMidTone:    { value: new THREE.Vector3(...threeThemes.ember.midTone) },
+    uHighlight:  { value: new THREE.Vector3(...threeThemes.ember.highlight) },
+    uWhiteHot:   { value: new THREE.Vector3(...threeThemes.ember.whiteHot) },
+    uRimColor:   { value: new THREE.Vector3(...threeThemes.ember.rimColor) }
+  };
+
+  function createMeltMaterial(isPlate) {
+    return new THREE.ShaderMaterial({
+      vertexShader, fragmentShader,
+      uniforms: {
+        uTime: meltUniforms.uTime,
+        uMelt: meltUniforms.uMelt,
+        uIsPlate: { value: isPlate ? 1.0 : 0.0 },
+        uDarkSteel: meltUniforms.uDarkSteel,
+        uHotPrimary: meltUniforms.uHotPrimary,
+        uMidTone: meltUniforms.uMidTone,
+        uHighlight: meltUniforms.uHighlight,
+        uWhiteHot: meltUniforms.uWhiteHot,
+        uRimColor: meltUniforms.uRimColor
+      }
+    });
+  }
+
+  // Bar
+  const bar = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.155, 0.155, 3.6, 18, 12),
+    createMeltMaterial(false)
+  );
+  bar.rotation.z = Math.PI / 2;
+  dumbbellGroup.add(bar);
+
+  // Knurl rings
+  for (let i = 0; i < 10; i++) {
+    const k = new THREE.Mesh(
+      new THREE.TorusGeometry(0.17, 0.02, 8, 18),
+      createMeltMaterial(false)
+    );
+    k.position.x = -0.9 + i * 0.2;
+    k.rotation.y = Math.PI / 2;
+    dumbbellGroup.add(k);
+  }
+
+  function buildSide(sign) {
+    const collarGeo = new THREE.CylinderGeometry(0.26, 0.26, 0.15, 18, 4);
+    const collar = new THREE.Mesh(collarGeo, createMeltMaterial(false));
+    collar.rotation.z = Math.PI / 2;
+    collar.position.x = sign * 1.3;
+    dumbbellGroup.add(collar);
+
+    const sizes = [{ r: 0.60, d: 0.22 }, { r: 0.82, d: 0.28 }, { r: 1.06, d: 0.34 }];
+    let offset = 1.5;
+    for (let i = 0; i < 3; i++) {
+      const s = sizes[i];
+      const plate = new THREE.Mesh(
+        new THREE.CylinderGeometry(s.r, s.r, s.d, 6, 8),
+        createMeltMaterial(true)
+      );
+      plate.rotation.z = Math.PI / 2;
+      plate.position.x = sign * offset;
+      dumbbellGroup.add(plate);
+
+      const bevel = new THREE.Mesh(
+        new THREE.TorusGeometry(s.r * 0.95, 0.025, 8, 6),
+        createMeltMaterial(true)
+      );
+      bevel.position.x = sign * (offset + s.d * 0.52);
+      bevel.rotation.y = Math.PI / 2;
+      dumbbellGroup.add(bevel);
+
+      if (i < 2) {
+        const spacer = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.2, 0.2, 0.06, 12, 2),
+          createMeltMaterial(false)
+        );
+        spacer.rotation.z = Math.PI / 2;
+        spacer.position.x = sign * (offset + s.d * 0.5 + 0.05);
+        dumbbellGroup.add(spacer);
+      }
+      offset += s.d + 0.08;
+    }
+
+    const cap = new THREE.Mesh(
+      new THREE.SphereGeometry(0.18, 12, 12),
+      createMeltMaterial(false)
+    );
+    cap.position.x = sign * (offset + 0.05);
+    dumbbellGroup.add(cap);
+  }
+
+  buildSide(1);
+  buildSide(-1);
+
+  /* ═══════ LIGHTS ═══════ */
+  scene.add(new THREE.AmbientLight(0x222233, 0.5));
+  const pl1 = new THREE.PointLight(0xE8380D, 2.5, 25);
+  pl1.position.set(3, 2, 5); scene.add(pl1);
+  const pl2 = new THREE.PointLight(0xFF6B2B, 1.5, 20);
+  pl2.position.set(-3, -1, 4); scene.add(pl2);
+  const pl3 = new THREE.PointLight(0xC07A1A, 1.0, 15);
+  pl3.position.set(0, 3, -3); scene.add(pl3);
+
+  /* ═══════ DRIP PARTICLES ═══════ */
+  const DRIP_COUNT = 40;
+  const dripGeo = new THREE.BufferGeometry();
+  const dPos = new Float32Array(DRIP_COUNT * 3);
+  const dVel = new Float32Array(DRIP_COUNT * 3);
+  const dLife = new Float32Array(DRIP_COUNT);
+  for (let i = 0; i < DRIP_COUNT; i++) {
+    dPos[i*3] = (Math.random()-0.5)*2.5;
+    dPos[i*3+1] = -0.3+Math.random()*0.5;
+    dPos[i*3+2] = (Math.random()-0.5)*1.5;
+    dVel[i*3+1] = -0.008;
+    dLife[i] = Math.random();
+  }
+  dripGeo.setAttribute('position', new THREE.BufferAttribute(dPos, 3));
+  const dripMat = new THREE.PointsMaterial({
+    color: 0xFF6B2B, size: 0.05, transparent: true, opacity: 0.5,
+    blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
+  });
+  const dripPts = new THREE.Points(dripGeo, dripMat);
+  scene.add(dripPts);
+
+  /* ═══════ MOLTEN POOL ═══════ */
+  const poolMat = new THREE.MeshBasicMaterial({
+    color: 0xE8380D, transparent: true, opacity: 0.08,
+    blending: THREE.AdditiveBlending, depthWrite: false
+  });
+  const pool = new THREE.Mesh(new THREE.CircleGeometry(1.8, 32), poolMat);
+  pool.rotation.x = -Math.PI / 2;
+  pool.position.y = -2.0;
+  scene.add(pool);
+
+  /* ═══════ MOUSE PARALLAX ═══════ */
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+
+  /* ═══════ THEME TRANSITION ═══════ */
+  window.setThreeTheme = function(name) {
+    const t = threeThemes[name] || threeThemes.ember;
+    _ct.darkSteel.set(...t.darkSteel); _ct.hotPrimary.set(...t.hotPrimary);
+    _ct.midTone.set(...t.midTone); _ct.highlight.set(...t.highlight);
+    _ct.whiteHot.set(...t.whiteHot); _ct.rimColor.set(...t.rimColor);
+    _lt1.set(t.light1); _lt2.set(t.light2); _lt3.set(t.light3);
+    _ptDrip.set(t.drip); _ptPool.set(t.pool);
+  };
+  /* ═══════ ANIMATE ═══════ */
+  const clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const time = clock.getElapsedTime();
+
+    meltUniforms.uTime.value = time;
+
+    // Theme color lerp
+    const _cl = 0.035;
+    meltUniforms.uDarkSteel.value.lerp(_ct.darkSteel, _cl);
+    meltUniforms.uHotPrimary.value.lerp(_ct.hotPrimary, _cl);
+    meltUniforms.uMidTone.value.lerp(_ct.midTone, _cl);
+    meltUniforms.uHighlight.value.lerp(_ct.highlight, _cl);
+    meltUniforms.uWhiteHot.value.lerp(_ct.whiteHot, _cl);
+    meltUniforms.uRimColor.value.lerp(_ct.rimColor, _cl);
+    pl1.color.lerp(_lt1, _cl); pl2.color.lerp(_lt2, _cl); pl3.color.lerp(_lt3, _cl);
+    dripMat.color.lerp(_ptDrip, _cl); poolMat.color.lerp(_ptPool, _cl);
+
+    // Slow rotation
+    dumbbellGroup.rotation.y += 0.003;
+    // Gentle bob
+    dumbbellGroup.position.y = Math.sin(time * 0.72) * 0.08;
+
+    // Mouse tilt
+    dumbbellGroup.rotation.x = mouseY * 0.06;
+
+    // Camera with subtle parallax
+    camera.position.x = 5.5 + mouseX * 0.4;
+    camera.position.y = 1.0 + mouseY * 0.3;
+    camera.lookAt(0, 0, 0);
+
+    // Light flicker
+    pl1.intensity = 2.5 + Math.sin(time * 3.2) * 0.3;
+    pl2.intensity = 1.5 + Math.sin(time * 2.7) * 0.2;
+
+    // Drip particles
+    const dp = dripPts.geometry.attributes.position.array;
+    for (let i = 0; i < DRIP_COUNT; i++) {
+      dLife[i] -= 0.004;
+      if (dLife[i] <= 0 || dp[i*3+1] < -3) {
+        dp[i*3] = (Math.random()-0.5)*2.5;
+        dp[i*3+1] = -0.3+Math.random()*0.5;
+        dp[i*3+2] = (Math.random()-0.5)*1.5;
+        dVel[i*3+1] = -0.008;
+        dLife[i] = 0.5+Math.random()*0.5;
+      }
+      dVel[i*3+1] -= 0.0004;
+      dp[i*3+1] += dVel[i*3+1];
+    }
+    dripPts.geometry.attributes.position.needsUpdate = true;
+
+    // Pool pulse
+    pool.scale.setScalar(1 + Math.sin(time * 2) * 0.04);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════
+     UI JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ═══════ CURSOR ═══════ */
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let dotX=0, dotY=0, ringX=0, ringY=0, mx=0, my=0;
+
+  document.addEventListener('mousemove', (e) => { mx=e.clientX; my=e.clientY; });
+
+  function animateCursor() {
+    dotX += (mx-dotX)*0.35; dotY += (my-dotY)*0.35;
+    ringX += (mx-ringX)*0.12; ringY += (my-ringY)*0.12;
+    dot.style.left = dotX+'px'; dot.style.top = dotY+'px';
+    ring.style.left = ringX+'px'; ring.style.top = ringY+'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  document.querySelectorAll('a, button, .value-card, .facility-card, .theme-dot').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+
+  /* ═══════ SCROLL PROGRESS ═══════ */
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    progressBar.style.width = (scrolled * 100) + '%';
+  });
+
+  /* ═══════ NAVBAR SCROLL ═══════ */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ═══════ MOBILE MENU ═══════ */
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    const mm = document.getElementById('mobileMenu');
+    mm.classList.add('active');
+    mm.querySelectorAll('a').forEach((l, i) => {
+      l.style.transitionDelay = (0.1 + i * 0.06) + 's';
+    });
+  });
+  document.getElementById('mobileClose').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('active');
+  });
+
+  /* ═══════ HERO ENTRANCE ═══════ */
+  window.addEventListener('load', () => {
+    setTimeout(() => document.querySelector('.hero').classList.add('loaded'), 200);
+  });
+
+  /* ═══════ INTERSECTION OBSERVER ═══════ */
+  const fiObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fi').forEach(el => fiObs.observe(el));
+
+  /* ═══════ ANIMATED TIMELINE FILL ═══════ */
+  const timeline = document.getElementById('timeline');
+  const timelineFill = document.getElementById('timelineFill');
+
+  if (timeline && timelineFill) {
+    const timelineObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateTimelineFill();
+          window.addEventListener('scroll', updateTimelineFill);
+        }
+      });
+    }, { threshold: 0.01 });
+
+    timelineObs.observe(timeline);
+
+    function updateTimelineFill() {
+      const rect = timeline.getBoundingClientRect();
+      const totalHeight = rect.height;
+      const scrolledInto = Math.max(0, -rect.top + window.innerHeight * 0.5);
+      const progress = Math.min(1, scrolledInto / totalHeight);
+      timelineFill.style.height = (progress * totalHeight) + 'px';
+    }
+  }
+
+  /* ═══════ THEME SWITCHER ═══════ */
+  document.querySelectorAll('.theme-dot').forEach(d => {
+    d.addEventListener('click', () => {
+      document.querySelectorAll('.theme-dot').forEach(x => x.classList.remove('active'));
+      d.classList.add('active');
+      const theme = d.dataset.theme;
+      if (theme === 'ember') document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme', theme);
+      if (typeof window.setThreeTheme === 'function') window.setThreeTheme(theme);
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

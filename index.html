@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Empire — Every Rep. Every Set. Every Version of You.</title>
+<meta name="description" content="Fitness Empire Kanpur — Premium gym offering Weight Training, CrossFit, Zumba, Kickboxing, Yoga & Personal Training. Rated 5.0★ on Google.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   CSS RESET & VARIABLES
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0B0B0D;
+  --fire: #E8380D;
+  --ember: #FF6B2B;
+  --gold: #C07A1A;
+  --ash: #131315;
+  --ash2: #1C1C20;
+  --text: #F0EDE8;
+  --muted: rgba(240,237,232,.44);
+  --border: rgba(232,56,13,.14);
+  --radius: 16px;
+  --font-headline: 'Bebas Neue', sans-serif;
+  --font-nav: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* Theme: Ash */
+[data-theme="ash"] {
+  --fire: #6B8CDE;
+  --ember: #8EAAEF;
+  --bg: #0C0C10;
+  --border: rgba(107,140,222,.14);
+}
+
+/* Theme: Inferno */
+[data-theme="inferno"] {
+  --fire: #FF4500;
+  --ember: #FF6A33;
+  --bg: #0A0300;
+  --border: rgba(255,69,0,.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  cursor: none;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Hide default cursor everywhere */
+*, *::before, *::after { cursor: none !important; }
+
+/* ═══════════════════════════════════════════
+   CUSTOM CURSOR
+   ═══════════════════════════════════════════ */
+.cursor-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--fire);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 12px var(--fire), 0 0 24px rgba(232,56,13,.4);
+  transition: transform 0.08s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(232,56,13,.46);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring.hover {
+  width: 48px;
+  height: 48px;
+  border-color: var(--fire);
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL PROGRESS BAR
+   ═══════════════════════════════════════════ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--fire), var(--ember), var(--gold));
+  z-index: 99997;
+  box-shadow: 0 0 10px var(--fire), 0 0 20px rgba(232,56,13,.3);
+}
+
+/* ═══════════════════════════════════════════
+   GRAIN OVERLAY
+   ═══════════════════════════════════════════ */
+.grain-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.042;
+}
+
+/* ═══════════════════════════════════════════
+   THREE.JS CANVAS
+   ═══════════════════════════════════════════ */
+#three-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+
+.navbar.scrolled {
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  background: rgba(11,11,13,.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-headline);
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo .logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--fire);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(11,11,13,.96);
+  backdrop-filter: blur(40px);
+  z-index: 9989;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  font-family: var(--font-headline);
+  font-size: 42px;
+  letter-spacing: 3px;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.25s ease;
+}
+
+.mobile-menu.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu a:hover {
+  color: var(--fire);
+}
+
+.mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 32px;
+  font-family: var(--font-nav);
+}
+
+/* ═══════════════════════════════════════════
+   CONTENT WRAPPER
+   ═══════════════════════════════════════════ */
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+/* ═══════════════════════════════════════════
+   INTERSECTION OBSERVER FADE
+   ═══════════════════════════════════════════ */
+.fi {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fi.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--fire);
+  color: #fff;
+  font-family: var(--font-nav);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 0 24px rgba(232,56,13,.35), 0 0 48px rgba(232,56,13,.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: firePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes firePulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(232,56,13,.35), 0 0 48px rgba(232,56,13,.15); }
+  50% { box-shadow: 0 0 32px rgba(232,56,13,.55), 0 0 64px rgba(232,56,13,.25); }
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(232,56,13,.55), 0 0 72px rgba(232,56,13,.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: rgba(240,237,232,.06);
+  backdrop-filter: blur(20px);
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(240,237,232,.12);
+  border-radius: var(--radius);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(240,237,232,.10);
+  border-color: rgba(240,237,232,.22);
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 140px 60px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aurora lava blobs */
+.hero-aurora {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-aurora .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: auroraFloat 12s ease-in-out infinite alternate;
+}
+
+.hero-aurora .blob-1 {
+  width: 600px; height: 600px;
+  background: rgba(232,56,13,.15);
+  top: -20%; left: -10%;
+  animation-delay: 0s;
+}
+
+.hero-aurora .blob-2 {
+  width: 500px; height: 500px;
+  background: rgba(255,107,43,.10);
+  top: 30%; right: -15%;
+  animation-delay: -4s;
+}
+
+.hero-aurora .blob-3 {
+  width: 450px; height: 450px;
+  background: rgba(192,122,26,.08);
+  bottom: -10%; left: 30%;
+  animation-delay: -8s;
+}
+
+@keyframes auroraFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+  100% { transform: translate(10px, -10px) scale(1.02); }
+}
+
+.hero-eyebrow {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--fire);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero h1 {
+  font-family: var(--font-headline);
+  font-size: clamp(56px, 10vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -1px;
+  color: var(--text);
+  max-width: 900px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero h1 .fire-word {
+  color: var(--fire);
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-badges {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(240,237,232,.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  backdrop-filter: blur(12px);
+}
+
+.badge .star {
+  color: var(--gold);
+  font-size: 14px;
+}
+
+/* Hero stagger entrance */
+.hero.loaded .hero-eyebrow { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded h1 { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.4s ease, transform 0.7s 0.4s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded .hero-sub { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.6s ease, transform 0.7s 0.6s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded .hero-ctas { opacity: 1; transform: translateY(0); transition: opacity 0.7s 0.8s ease, transform 0.7s 0.8s cubic-bezier(0.16,1,0.3,1); }
+.hero.loaded .hero-badges { opacity: 1; transform: translateY(0); transition: opacity 0.7s 1.0s ease, transform 0.7s 1.0s cubic-bezier(0.16,1,0.3,1); }
+
+/* ═══════════════════════════════════════════
+   MARQUEE STRIP
+   ═══════════════════════════════════════════ */
+.marquee-section {
+  background: var(--fire);
+  padding: 14px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marqueeScroll 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-item {
+  font-family: var(--font-nav);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.marquee-item .sep {
+  color: rgba(255,255,255,.4);
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES GRID
+   ═══════════════════════════════════════════ */
+.services-section {
+  padding: 120px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--fire);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-headline);
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: rgba(240,237,232,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(232,56,13,.06), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  border-color: rgba(232,56,13,.35);
+  box-shadow: 0 0 40px rgba(232,56,13,.08);
+  transform: translateY(-4px);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  color: var(--fire);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  font-family: var(--font-headline);
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   STATS BAR
+   ═══════════════════════════════════════════ */
+.stats-section {
+  padding: 80px 60px;
+  background: var(--ash);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item .stat-value {
+  font-family: var(--font-headline);
+  font-size: clamp(48px, 6vw, 72px);
+  color: var(--fire);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-item .stat-label {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT STRIP
+   ═══════════════════════════════════════════ */
+.about-section {
+  padding: 120px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-quote {
+  font-family: var(--font-headline);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.about-quote .fire {
+  color: var(--fire);
+}
+
+.about-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+}
+
+.about-body p + p {
+  margin-top: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════ */
+.testimonials-section {
+  padding: 120px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.testimonial-card {
+  background: rgba(240,237,232,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.testimonial-card .quote-mark {
+  font-family: var(--font-headline);
+  font-size: 64px;
+  color: var(--fire);
+  line-height: 1;
+  opacity: 0.3;
+  position: absolute;
+  top: 20px;
+  right: 28px;
+}
+
+.testimonial-card p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fire), var(--ember));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-nav);
+  font-weight: 800;
+  font-size: 14px;
+  color: #fff;
+}
+
+.testimonial-name {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.testimonial-role {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   LOCATION
+   ═══════════════════════════════════════════ */
+.location-section {
+  padding: 120px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.location-info h2 {
+  font-family: var(--font-headline);
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.location-detail {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.location-detail .icon {
+  color: var(--fire);
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.location-detail .detail-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+
+.location-detail .detail-text strong {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(0.92) hue-rotate(180deg) brightness(0.6) contrast(1.4) saturate(0.3);
+}
+
+/* ═══════════════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════════════ */
+.cta-section {
+  padding: 160px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(232,56,13,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-family: var(--font-headline);
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 0.95;
+  color: var(--text);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-section h2 .fire {
+  color: var(--fire);
+}
+
+.cta-section p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  padding: 48px 100px 48px 140px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-left {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-right a {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-right a:hover {
+  color: var(--text);
+}
+
+/* ═══════════════════════════════════════════
+   WHATSAPP BUTTON
+   ═══════════════════════════════════════════ */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9995;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,.35);
+  transition: transform 0.25s ease;
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.35), 0 0 0 0 rgba(37,211,102,.3); }
+  50% { box-shadow: 0 4px 20px rgba(37,211,102,.35), 0 0 0 14px rgba(37,211,102,0); }
+}
+
+/* ═══════════════════════════════════════════
+   THEME SWITCHER
+   ═══════════════════════════════════════════ */
+.theme-switcher {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 9995;
+  display: flex;
+  gap: 10px;
+  background: rgba(240,237,232,.05);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px 12px;
+  backdrop-filter: blur(12px);
+}
+
+.theme-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(240,237,232,.15);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.theme-dot:hover {
+  transform: scale(1.15);
+}
+
+.theme-dot.active {
+  border-color: var(--text);
+}
+
+.theme-dot[data-theme="ember"] {
+  background: #E8380D;
+}
+
+.theme-dot[data-theme="ash"] {
+  background: #6B8CDE;
+}
+
+.theme-dot[data-theme="inferno"] {
+  background: #FF4500;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero { padding: 120px 28px 80px; }
+  .hero h1 { font-size: clamp(44px, 12vw, 72px); }
+
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .navbar { padding: 14px 24px; }
+
+  .services-section { padding: 80px 28px; }
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stats-section { padding: 60px 28px; }
+
+  .about-section { grid-template-columns: 1fr; gap: 40px; padding: 80px 28px; }
+
+  .testimonials-section { padding: 80px 28px; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .location-section { grid-template-columns: 1fr; gap: 40px; padding: 80px 28px; }
+
+  .cta-section { padding: 100px 28px; }
+
+  .footer { padding: 32px 28px 80px; flex-direction: column; text-align: center; }
+
+  .theme-switcher { bottom: 20px; left: 20px; }
+  .whatsapp-btn { bottom: 20px; right: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(36px, 14vw, 56px); }
+  .hero-badges { flex-direction: column; gap: 12px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas a { width: 100%; text-align: center; justify-content: center; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .section-title { font-size: clamp(32px, 8vw, 48px); }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Grain Overlay -->
+<svg class="grain-overlay" viewBox="0 0 512 512" preserveAspectRatio="none">
+  <filter id="grain-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+</svg>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Three.js Canvas -->
+<canvas id="three-canvas"></canvas>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══════ NAVBAR ═══════ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 2L4 10v16l14 8 14-8V10L18 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M18 6l-10 5.8v11.6L18 29l10-5.6V11.8L18 6z" fill="var(--fire)" opacity="0.2"/>
+      <path d="M12 18h12M15 14h6M15 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    FITNESS EMPIRE
+  </a>
+  <ul class="nav-links">
+    <li><a href="story.html">Our Story</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="transformations.html">Results</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="compass.html">Compass</a></li>
+    <li><a href="bmi.html">BMI</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <a href="story.html">Our Story</a>
+  <a href="classes.html">Classes</a>
+  <a href="transformations.html">Results</a>
+  <a href="contact.html">Contact</a>
+  <a href="compass.html">Compass</a>
+  <a href="bmi.html">BMI</a>
+</div>
+
+<!-- ═══════ CONTENT ═══════ -->
+<div class="content">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-section">
+    <div class="hero-aurora">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-eyebrow">✦ Kanpur's Premier Training Ground</div>
+    <h1>EVERY <span class="fire-word">REP.</span><br>EVERY SET.<br>EVERY VERSION<br>OF <span class="fire-word">YOU.</span></h1>
+    <p class="hero-sub">Where raw discipline meets fire. Fitness Empire is not just a gym — it's the forging ground for the strongest version of yourself. Kanpur's highest-rated training facility.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20join%20Fitness%20Empire" target="_blank" rel="noopener noreferrer" class="btn-primary">Start Your Reign</a>
+      <a href="classes.html" class="btn-secondary">Explore Classes</a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><span class="star">&#9733;</span> 5.0 Google Rating</div>
+      <div class="badge"><span class="star">&#9733;</span> 4.7 Justdial Rating</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">WEIGHT TRAINING <span class="sep">◆</span></div>
+      <div class="marquee-item">CROSSFIT & HIIT <span class="sep">◆</span></div>
+      <div class="marquee-item">ZUMBA & DANCE FITNESS <span class="sep">◆</span></div>
+      <div class="marquee-item">KICKBOXING & MARTIAL ARTS <span class="sep">◆</span></div>
+      <div class="marquee-item">YOGA & FLEXIBILITY <span class="sep">◆</span></div>
+      <div class="marquee-item">PERSONAL TRAINING <span class="sep">◆</span></div>
+      <div class="marquee-item">5.0★ GOOGLE <span class="sep">◆</span></div>
+      <div class="marquee-item">4.7★ JUSTDIAL <span class="sep">◆</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">WEIGHT TRAINING <span class="sep">◆</span></div>
+      <div class="marquee-item">CROSSFIT & HIIT <span class="sep">◆</span></div>
+      <div class="marquee-item">ZUMBA & DANCE FITNESS <span class="sep">◆</span></div>
+      <div class="marquee-item">KICKBOXING & MARTIAL ARTS <span class="sep">◆</span></div>
+      <div class="marquee-item">YOGA & FLEXIBILITY <span class="sep">◆</span></div>
+      <div class="marquee-item">PERSONAL TRAINING <span class="sep">◆</span></div>
+      <div class="marquee-item">5.0★ GOOGLE <span class="sep">◆</span></div>
+      <div class="marquee-item">4.7★ JUSTDIAL <span class="sep">◆</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services-section">
+    <div class="fi">
+      <div class="section-eyebrow">✦ What We Offer</div>
+      <h2 class="section-title">FORGED IN FIRE,<br>BUILT FOR YOU</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>WEIGHT TRAINING</h3>
+        <p>From beginner to beast. Progressive overload programming with premium equipment — dumbbells, barbells, cables, and plate-loaded machines to sculpt every muscle group.</p>
+      </div>
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>CROSSFIT & HIIT</h3>
+        <p>High-intensity functional training that pushes your cardiovascular limits. Burn fat, build endurance, and unlock explosive power in every session.</p>
+      </div>
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>ZUMBA & DANCE FITNESS</h3>
+        <p>The workout that does not feel like one. Move to infectious rhythms, torch calories, and leave every class with energy you did not know you had.</p>
+      </div>
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>KICKBOXING & MARTIAL ARTS</h3>
+        <p>Strike, defend, dominate. Build raw power, razor-sharp reflexes, and unshakable confidence through combat-based training.</p>
+      </div>
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>YOGA & FLEXIBILITY</h3>
+        <p>Strength without flexibility is incomplete. Restore balance, improve mobility, and develop the mind-body connection that fuels every other discipline.</p>
+      </div>
+      <div class="service-card fi">
+        <span class="service-icon">◈</span>
+        <h3>PERSONAL TRAINING</h3>
+        <p>One-on-one guidance tailored to your body, your goals, your timeline. Nutrition consulting included — because results are built in the kitchen too.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" id="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item fi">
+        <div class="stat-value" data-target="5.0" data-decimal="1">0</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item fi">
+        <div class="stat-value" data-target="4.7" data-decimal="1">0</div>
+        <div class="stat-label">Justdial Rating</div>
+      </div>
+      <div class="stat-item fi">
+        <div class="stat-value" data-target="6" data-suffix="+">0</div>
+        <div class="stat-label">Training Disciplines</div>
+      </div>
+      <div class="stat-item fi">
+        <div class="stat-value" data-target="16" data-suffix="H">0</div>
+        <div class="stat-label">Daily Operating Hours</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about-section">
+    <div class="fi">
+      <div class="about-quote">"We didn't build a gym. We built an <span class="fire">Empire</span> where strength is the currency and discipline is the language."</div>
+    </div>
+    <div class="about-body fi">
+      <p>Fitness Empire was founded in 2024 in the heart of Kanpur with one clear mission: to give this city a training ground that matches its hunger. Located near Yadav Chauraha on Satbari Road, we are not hidden in a basement or squeezed into a corner shop.</p>
+      <p>We built a space where every rack is loaded, every class is coached with fire, and every member walks in as they are — and walks out as someone stronger. Whether you come for weight training, martial arts, Zumba, or personal training, the standard is the same: excellence, every single day.</p>
+      <p>Six days a week, sixteen hours a day. That is our commitment. What's yours?</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials-section">
+    <div class="fi">
+      <div class="section-eyebrow">✦ What Our Members Say</div>
+      <h2 class="section-title">VOICES FROM<br>THE EMPIRE</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fi">
+        <span class="quote-mark">"</span>
+        <p>Joined Fitness Empire three months ago and the transformation is real. The trainers do not just count your reps — they push you beyond what you thought was possible. Best gym in Kanpur, period.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div>
+            <div class="testimonial-name">Rahul Verma</div>
+            <div class="testimonial-role">Member since 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fi">
+        <span class="quote-mark">"</span>
+        <p>The Zumba and kickboxing classes are incredible. I have never enjoyed working out this much. The energy in this place is unmatched — every session feels like an event. Already recommended it to all my friends.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div>
+            <div class="testimonial-name">Priya Singh</div>
+            <div class="testimonial-role">Member since 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fi">
+        <span class="quote-mark">"</span>
+        <p>Personal training here is on another level. My trainer built a nutrition plan and workout routine that actually fits my life. Lost 8kg in two months without feeling starved. This is the real deal.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amit Yadav</div>
+            <div class="testimonial-role">Member since 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location-section" id="location-section">
+    <div class="location-info fi">
+      <h2>FIND THE EMPIRE</h2>
+      <div class="location-detail">
+        <span class="icon">◇</span>
+        <div class="detail-text">
+          <strong>Address</strong><br>
+          Barsana Market, near Yadav Chauraha,<br>
+          above New Azad Nagar, Satbari Road,<br>
+          Kanpur, UP — 208011
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="icon">◇</span>
+        <div class="detail-text">
+          <strong>Hours</strong><br>
+          Monday – Saturday: 6:00 AM – 10:00 PM<br>
+          Sunday: Closed
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="icon">◇</span>
+        <div class="detail-text">
+          <strong>Payments</strong><br>
+          Cash ◆ Paytm ◆ PhonePe ◆ JioMoney ◆ Amazon Pay
+        </div>
+      </div>
+    </div>
+    <div class="map-container fi">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.7!2d80.35!3d26.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI3JzAwLjAiTiA4MMKwMjEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Fitness Empire Location - Satbari Road, Kanpur">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section" id="cta-section">
+    <div class="fi">
+      <h2>YOUR EMPIRE<br>AWAITS <span class="fire">YOU</span></h2>
+      <p>Stop waiting for the perfect moment. Walk in, show up, and let the iron do the talking. Your first session starts with a single decision.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20join%20Fitness%20Empire" target="_blank" rel="noopener noreferrer" class="btn-primary">Claim Your Spot</a>
+        <a href="compass.html" class="btn-secondary">Take the Fitness Compass</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      &copy; 2024–2026 Fitness Empire, Kanpur. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Fitness%20Empire!%20I'm%20interested%20in%20joining." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+  <div class="theme-dot active" data-theme="ember" title="Ember"></div>
+  <div class="theme-dot" data-theme="ash" title="Ash"></div>
+  <div class="theme-dot" data-theme="inferno" title="Inferno"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     THREE.JS 3D MELTING DUMBBELL
+     ═══════════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  /* ═══════ SCENE SETUP ═══════ */
+  const canvas = document.getElementById('three-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.35;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(4.2, 0.9, 9.2);
+  camera.lookAt(0, 0, 0);
+
+  /* ═══════ GLSL SHADERS ═══════ */
+  const vertexShader = `
+    uniform float uTime;
+    uniform float uMelt;
+    uniform float uIsPlate;
+
+    varying float vHeat;
+    varying float vCrack;
+    varying vec3 vPos;
+    varying vec3 vNorm;
+
+    // Value noise
+    float hash(vec3 p) {
+      p = fract(p * 0.3183099 + 0.1);
+      p *= 17.0;
+      return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+    }
+
+    float noise3D(vec3 p) {
+      vec3 i = floor(p);
+      vec3 f = fract(p);
+      f = f * f * (3.0 - 2.0 * f);
+      return mix(
+        mix(mix(hash(i), hash(i + vec3(1,0,0)), f.x),
+            mix(hash(i + vec3(0,1,0)), hash(i + vec3(1,1,0)), f.x), f.y),
+        mix(mix(hash(i + vec3(0,0,1)), hash(i + vec3(1,0,1)), f.x),
+            mix(hash(i + vec3(0,1,1)), hash(i + vec3(1,1,1)), f.x), f.y), f.z
+      );
+    }
+
+    float multiNoise(vec3 p, float t) {
+      float n = noise3D(p * 2.0 + t * 0.3) * 0.5;
+      n += noise3D(p * 4.5 + t * 0.5) * 0.3;
+      n += noise3D(p * 9.0 + t * 0.7) * 0.2;
+      return n;
+    }
+
+    void main() {
+      vec3 p = position;
+      float t = uTime;
+
+      // Radial distance from center axis (for plate edge priority)
+      float radialDist = length(p.xz);
+      float edgeFactor = uIsPlate * smoothstep(0.3, 1.1, radialDist);
+
+      // Noise-based deformation
+      float nVal = multiNoise(p, t);
+      float heatRaw = uMelt * (0.3 + 0.7 * edgeFactor) * nVal;
+      heatRaw = clamp(heatRaw, 0.0, 1.0);
+
+      // Melt line - vertices below droop
+      float meltLine = 0.5 - uMelt * 2.0;
+      float belowMelt = smoothstep(meltLine, meltLine - 0.5, p.y);
+
+      // Gravity droop
+      p.y -= heatRaw * 1.25 * uMelt * belowMelt;
+
+      // Organic wobble
+      float wobble = sin(p.y * 3.0 + t * 1.5 + nVal * 4.0) * uMelt * 0.12;
+      p.x += wobble * edgeFactor;
+      p.z += cos(p.y * 2.5 + t * 1.2) * uMelt * 0.08 * edgeFactor;
+
+      // Surface warp
+      p += normal * nVal * uMelt * 0.1;
+
+      // Crack vein mask
+      float n2 = noise3D(p * 6.0 + t * 0.2);
+      float crack = step(0.74, nVal) * step(0.68, n2) * uMelt;
+
+      vHeat = heatRaw;
+      vCrack = crack;
+      vPos = p;
+      vNorm = normalMatrix * normal;
+
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+    }
+  `;
+
+  const fragmentShader = `
+    uniform float uTime;
+    uniform float uMelt;
+    uniform vec3 uDarkSteel;
+    uniform vec3 uHotPrimary;
+    uniform vec3 uMidTone;
+    uniform vec3 uHighlight;
+    uniform vec3 uWhiteHot;
+    uniform vec3 uRimColor;
+
+    varying float vHeat;
+    varying float vCrack;
+    varying vec3 vPos;
+    varying vec3 vNorm;
+
+    void main() {
+      // 5-stop heat gradient (theme-driven)
+      float h = vHeat;
+      vec3 col;
+      if (h < 0.25) col = mix(uDarkSteel, uHotPrimary, h / 0.25);
+      else if (h < 0.5) col = mix(uHotPrimary, uMidTone, (h - 0.25) / 0.25);
+      else if (h < 0.75) col = mix(uMidTone, uHighlight, (h - 0.5) / 0.25);
+      else col = mix(uHighlight, uWhiteHot, (h - 0.75) / 0.25);
+
+      // Crack glowing fissures
+      vec3 crackColor = mix(uMidTone, uWhiteHot, vCrack * 0.8);
+      col = mix(col, crackColor, vCrack * 0.9);
+
+      // Fresnel rim glow
+      vec3 viewDir = normalize(cameraPosition - vPos);
+      float NdotV = max(dot(normalize(vNorm), viewDir), 0.0);
+      float fresnel = pow(1.0 - NdotV, 3.2) * uMelt * 1.15;
+      col += uRimColor * fresnel;
+
+      // Heat shimmer
+      float shimmer = sin(vPos.y * 12.0 + uTime * 4.0) * 0.04 * uMelt;
+      col += shimmer;
+
+      // Cool steel specular when melt is low
+      float spec = pow(NdotV, 32.0) * (1.0 - uMelt) * 0.5;
+      col += vec3(0.6, 0.6, 0.7) * spec;
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  /* ═══════ BUILD DUMBBELL PROCEDURALLY ═══════ */
+  const dumbbellGroup = new THREE.Group();
+  scene.add(dumbbellGroup);
+
+  /* ═══════ THEME COLOR PRESETS (Three.js) ═══════ */
+  const threeThemes = {
+    ember: {
+      darkSteel:  [0.038, 0.038, 0.052],
+      hotPrimary: [0.92, 0.04, 0.0],
+      midTone:    [1.0, 0.27, 0.0],
+      highlight:  [1.0, 0.74, 0.04],
+      whiteHot:   [1.0, 0.95, 0.80],
+      rimColor:   [0.95, 0.2, 0.0],
+      light1: 0xE8380D, light2: 0xFF6B2B, light3: 0xC07A1A,
+      drip: 0xFF6B2B, fire: 0xE8380D, spark: 0xFFAA44, pool: 0xE8380D,
+      bgStates: [
+        [0.082, 0.014, 0.006],
+        [0.090, 0.012, 0.004],
+        [0.100, 0.011, 0.003],
+        [0.075, 0.018, 0.010],
+        [0.130, 0.007, 0.000]
+      ]
+    },
+    ash: {
+      darkSteel:  [0.038, 0.038, 0.065],
+      hotPrimary: [0.15, 0.30, 0.82],
+      midTone:    [0.32, 0.50, 0.92],
+      highlight:  [0.56, 0.72, 1.0],
+      whiteHot:   [0.85, 0.92, 1.0],
+      rimColor:   [0.20, 0.40, 0.95],
+      light1: 0x6B8CDE, light2: 0x8EAAEF, light3: 0x4466AA,
+      drip: 0x8EAAEF, fire: 0x6B8CDE, spark: 0xAABBFF, pool: 0x6B8CDE,
+      bgStates: [
+        [0.014, 0.018, 0.075],
+        [0.012, 0.020, 0.082],
+        [0.010, 0.015, 0.090],
+        [0.016, 0.022, 0.070],
+        [0.008, 0.010, 0.110]
+      ]
+    },
+    inferno: {
+      darkSteel:  [0.045, 0.030, 0.020],
+      hotPrimary: [1.0, 0.12, 0.0],
+      midTone:    [1.0, 0.35, 0.0],
+      highlight:  [1.0, 0.78, 0.08],
+      whiteHot:   [1.0, 0.97, 0.85],
+      rimColor:   [1.0, 0.27, 0.0],
+      light1: 0xFF4500, light2: 0xFF6A33, light3: 0xCC6600,
+      drip: 0xFF6A33, fire: 0xFF4500, spark: 0xFFBB55, pool: 0xFF4500,
+      bgStates: [
+        [0.075, 0.014, 0.004],
+        [0.090, 0.012, 0.000],
+        [0.120, 0.012, 0.000],
+        [0.070, 0.020, 0.006],
+        [0.150, 0.008, 0.000]
+      ]
+    }
+  };
+
+  let activeThreeTheme = 'ember';
+
+  const meltUniforms = {
+    uTime: { value: 0 },
+    uMelt: { value: 0.85 },
+    uIsPlate: { value: 0.0 },
+    uDarkSteel:  { value: new THREE.Vector3(...threeThemes.ember.darkSteel) },
+    uHotPrimary: { value: new THREE.Vector3(...threeThemes.ember.hotPrimary) },
+    uMidTone:    { value: new THREE.Vector3(...threeThemes.ember.midTone) },
+    uHighlight:  { value: new THREE.Vector3(...threeThemes.ember.highlight) },
+    uWhiteHot:   { value: new THREE.Vector3(...threeThemes.ember.whiteHot) },
+    uRimColor:   { value: new THREE.Vector3(...threeThemes.ember.rimColor) }
+  };
+
+  function createMeltMaterial(isPlate) {
+    return new THREE.ShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      uniforms: {
+        uTime: meltUniforms.uTime,
+        uMelt: meltUniforms.uMelt,
+        uIsPlate: { value: isPlate ? 1.0 : 0.0 },
+        uDarkSteel:  meltUniforms.uDarkSteel,
+        uHotPrimary: meltUniforms.uHotPrimary,
+        uMidTone:    meltUniforms.uMidTone,
+        uHighlight:  meltUniforms.uHighlight,
+        uWhiteHot:   meltUniforms.uWhiteHot,
+        uRimColor:   meltUniforms.uRimColor
+      }
+    });
+  }
+
+  // Central bar
+  const barGeo = new THREE.CylinderGeometry(0.155, 0.155, 3.6, 18, 12);
+  const bar = new THREE.Mesh(barGeo, createMeltMaterial(false));
+  bar.rotation.z = Math.PI / 2;
+  dumbbellGroup.add(bar);
+
+  // Knurl rings on bar
+  for (let i = 0; i < 10; i++) {
+    const kGeo = new THREE.TorusGeometry(0.17, 0.02, 8, 18);
+    const k = new THREE.Mesh(kGeo, createMeltMaterial(false));
+    k.position.x = -0.9 + i * 0.2;
+    k.rotation.y = Math.PI / 2;
+    dumbbellGroup.add(k);
+  }
+
+  // Build plates for each side
+  function buildSide(sideX) {
+    const sign = sideX > 0 ? 1 : -1;
+
+    // Spinner collar
+    const collarGeo = new THREE.CylinderGeometry(0.26, 0.26, 0.15, 18, 4);
+    const collar = new THREE.Mesh(collarGeo, createMeltMaterial(false));
+    collar.rotation.z = Math.PI / 2;
+    collar.position.x = sign * 1.3;
+    dumbbellGroup.add(collar);
+
+    // 3 hex plates
+    const plateSizes = [
+      { r: 0.60, d: 0.22 },
+      { r: 0.82, d: 0.28 },
+      { r: 1.06, d: 0.34 }
+    ];
+
+    let offset = 1.5;
+    for (let i = 0; i < 3; i++) {
+      const ps = plateSizes[i];
+
+      // Hex plate (6 radial segments = hexagonal)
+      const plateGeo = new THREE.CylinderGeometry(ps.r, ps.r, ps.d, 6, 8);
+      const plate = new THREE.Mesh(plateGeo, createMeltMaterial(true));
+      plate.rotation.z = Math.PI / 2;
+      plate.position.x = sign * offset;
+      dumbbellGroup.add(plate);
+
+      // Bevel ring
+      const bevelGeo = new THREE.TorusGeometry(ps.r * 0.95, 0.025, 8, 6);
+      const bevel = new THREE.Mesh(bevelGeo, createMeltMaterial(true));
+      bevel.position.x = sign * (offset + ps.d * 0.52);
+      bevel.rotation.y = Math.PI / 2;
+      dumbbellGroup.add(bevel);
+
+      // Spacer ring between plates
+      if (i < 2) {
+        const spacerGeo = new THREE.CylinderGeometry(0.2, 0.2, 0.06, 12, 2);
+        const spacer = new THREE.Mesh(spacerGeo, createMeltMaterial(false));
+        spacer.rotation.z = Math.PI / 2;
+        spacer.position.x = sign * (offset + ps.d * 0.5 + 0.05);
+        dumbbellGroup.add(spacer);
+      }
+
+      offset += ps.d + 0.08;
+    }
+
+    // End cap
+    const capGeo = new THREE.SphereGeometry(0.18, 12, 12);
+    const cap = new THREE.Mesh(capGeo, createMeltMaterial(false));
+    cap.position.x = sign * (offset + 0.05);
+    dumbbellGroup.add(cap);
+  }
+
+  buildSide(1);
+  buildSide(-1);
+
+  /* ═══════ LIGHTS ═══════ */
+  const ambientLight = new THREE.AmbientLight(0x222233, 0.4);
+  scene.add(ambientLight);
+
+  const pointLight1 = new THREE.PointLight(0xE8380D, 3.2, 25);
+  pointLight1.position.set(3, 2, 5);
+  scene.add(pointLight1);
+
+  const pointLight2 = new THREE.PointLight(0xFF6B2B, 2.0, 20);
+  pointLight2.position.set(-3, -1, 4);
+  scene.add(pointLight2);
+
+  const pointLight3 = new THREE.PointLight(0xC07A1A, 1.5, 15);
+  pointLight3.position.set(0, 3, -3);
+  scene.add(pointLight3);
+
+  /* ═══════ PARTICLE SYSTEMS ═══════ */
+  // Drip particles (teardrop-shaped molten drops)
+  const DRIP_COUNT = 60;
+  const dripGeo = new THREE.BufferGeometry();
+  const dripPositions = new Float32Array(DRIP_COUNT * 3);
+  const dripVelocities = new Float32Array(DRIP_COUNT * 3);
+  const dripLifetimes = new Float32Array(DRIP_COUNT);
+  const dripSizes = new Float32Array(DRIP_COUNT);
+
+  for (let i = 0; i < DRIP_COUNT; i++) {
+    dripPositions[i*3] = (Math.random() - 0.5) * 3;
+    dripPositions[i*3+1] = -0.5 + Math.random() * 0.5;
+    dripPositions[i*3+2] = (Math.random() - 0.5) * 2;
+    dripVelocities[i*3] = 0;
+    dripVelocities[i*3+1] = -0.02;
+    dripVelocities[i*3+2] = 0;
+    dripLifetimes[i] = Math.random();
+    dripSizes[i] = 2 + Math.random() * 4;
+  }
+
+  dripGeo.setAttribute('position', new THREE.BufferAttribute(dripPositions, 3));
+  dripGeo.setAttribute('size', new THREE.BufferAttribute(dripSizes, 1));
+
+  const dripMat = new THREE.PointsMaterial({
+    color: 0xFF6B2B,
+    size: 0.06,
+    transparent: true,
+    opacity: 0.7,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    sizeAttenuation: true
+  });
+
+  const dripParticles = new THREE.Points(dripGeo, dripMat);
+  scene.add(dripParticles);
+
+  // Fire particles
+  const FIRE_COUNT = 80;
+  const fireGeo = new THREE.BufferGeometry();
+  const firePositions = new Float32Array(FIRE_COUNT * 3);
+  const fireVelocities = new Float32Array(FIRE_COUNT * 3);
+  const fireLifetimes = new Float32Array(FIRE_COUNT);
+
+  for (let i = 0; i < FIRE_COUNT; i++) {
+    resetFireParticle(i);
+  }
+
+  function resetFireParticle(i) {
+    firePositions[i*3] = (Math.random() - 0.5) * 3;
+    firePositions[i*3+1] = -1.5 + Math.random() * 0.5;
+    firePositions[i*3+2] = (Math.random() - 0.5) * 2;
+    fireVelocities[i*3] = (Math.random() - 0.5) * 0.01;
+    fireVelocities[i*3+1] = 0.015 + Math.random() * 0.02;
+    fireVelocities[i*3+2] = (Math.random() - 0.5) * 0.01;
+    fireLifetimes[i] = Math.random();
+  }
+
+  fireGeo.setAttribute('position', new THREE.BufferAttribute(firePositions, 3));
+
+  const fireMat = new THREE.PointsMaterial({
+    color: 0xE8380D,
+    size: 0.04,
+    transparent: true,
+    opacity: 0.5,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    sizeAttenuation: true
+  });
+
+  const fireParticles = new THREE.Points(fireGeo, fireMat);
+  scene.add(fireParticles);
+
+  // Spark particles
+  const SPARK_COUNT = 40;
+  const sparkGeo = new THREE.BufferGeometry();
+  const sparkPositions = new Float32Array(SPARK_COUNT * 3);
+  const sparkVelocities = new Float32Array(SPARK_COUNT * 3);
+  const sparkLifetimes = new Float32Array(SPARK_COUNT);
+
+  for (let i = 0; i < SPARK_COUNT; i++) {
+    resetSparkParticle(i);
+  }
+
+  function resetSparkParticle(i) {
+    sparkPositions[i*3] = (Math.random() - 0.5) * 2;
+    sparkPositions[i*3+1] = (Math.random() - 0.5) * 1;
+    sparkPositions[i*3+2] = (Math.random() - 0.5) * 2;
+    sparkVelocities[i*3] = (Math.random() - 0.5) * 0.08;
+    sparkVelocities[i*3+1] = 0.02 + Math.random() * 0.06;
+    sparkVelocities[i*3+2] = (Math.random() - 0.5) * 0.08;
+    sparkLifetimes[i] = Math.random();
+  }
+
+  sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPositions, 3));
+
+  const sparkMat = new THREE.PointsMaterial({
+    color: 0xFFAA44,
+    size: 0.025,
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    sizeAttenuation: true
+  });
+
+  const sparkParticles = new THREE.Points(sparkGeo, sparkMat);
+  scene.add(sparkParticles);
+
+  // Molten pool
+  const poolGeo = new THREE.CircleGeometry(1.8, 32);
+  const poolMat = new THREE.MeshBasicMaterial({
+    color: 0xE8380D,
+    transparent: true,
+    opacity: 0,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+  const pool = new THREE.Mesh(poolGeo, poolMat);
+  pool.rotation.x = -Math.PI / 2;
+  pool.position.y = -2.0;
+  scene.add(pool);
+
+  /* ═══════ SCROLL STATES (theme-aware) ═══════ */
+  // Constant high melt & light — dumbbell burns brightly throughout
+  const statesMelt = [0.85, 0.88, 0.92, 0.86, 0.95];
+  const statesCam  = [[4.2,0.9,9.2],[3.0,-0.2,7.8],[2.0,1.2,6.8],[5.2,0.4,7.6],[2.8,0.0,5.8]];
+  const statesLight = [6.0, 6.2, 6.5, 6.0, 7.0];
+
+  function buildStates(themeName) {
+    const t = threeThemes[themeName];
+    return statesMelt.map((m, i) => ({
+      melt: m,
+      cam: statesCam[i],
+      bg: t.bgStates[i],
+      light: statesLight[i]
+    }));
+  }
+
+  let states = buildStates('ember');
+  let currentState = { ...states[0] };
+  let targetState = { ...states[0] };
+
+  /* ═══════ THEME TRANSITION FOR THREE.JS ═══════ */
+  // Targets for smooth lerp (set by setThreeTheme, consumed in animate)
+  const colorTargets = {
+    darkSteel:  new THREE.Vector3(...threeThemes.ember.darkSteel),
+    hotPrimary: new THREE.Vector3(...threeThemes.ember.hotPrimary),
+    midTone:    new THREE.Vector3(...threeThemes.ember.midTone),
+    highlight:  new THREE.Vector3(...threeThemes.ember.highlight),
+    whiteHot:   new THREE.Vector3(...threeThemes.ember.whiteHot),
+    rimColor:   new THREE.Vector3(...threeThemes.ember.rimColor)
+  };
+  let lightTarget1 = new THREE.Color(0xE8380D);
+  let lightTarget2 = new THREE.Color(0xFF6B2B);
+  let lightTarget3 = new THREE.Color(0xC07A1A);
+  let particleTargetDrip  = new THREE.Color(0xFF6B2B);
+  let particleTargetFire  = new THREE.Color(0xE8380D);
+  let particleTargetSpark = new THREE.Color(0xFFAA44);
+  let particleTargetPool  = new THREE.Color(0xE8380D);
+
+  window.setThreeTheme = function(themeName) {
+    const t = threeThemes[themeName] || threeThemes.ember;
+    activeThreeTheme = themeName;
+
+    // Update shader color targets (lerped in animate loop)
+    colorTargets.darkSteel.set(...t.darkSteel);
+    colorTargets.hotPrimary.set(...t.hotPrimary);
+    colorTargets.midTone.set(...t.midTone);
+    colorTargets.highlight.set(...t.highlight);
+    colorTargets.whiteHot.set(...t.whiteHot);
+    colorTargets.rimColor.set(...t.rimColor);
+
+    // Update light targets
+    lightTarget1.set(t.light1);
+    lightTarget2.set(t.light2);
+    lightTarget3.set(t.light3);
+
+    // Update particle targets
+    particleTargetDrip.set(t.drip);
+    particleTargetFire.set(t.fire);
+    particleTargetSpark.set(t.spark);
+    particleTargetPool.set(t.pool);
+
+    // Rebuild scroll bg states
+    states = buildStates(themeName);
+    updateTargetState();
+  };
+
+  /* ═══════ MOUSE PARALLAX ═══════ */
+  let mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  /* ═══════ SCROLL HANDLER ═══════ */
+  function getScrollProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    return Math.max(0, Math.min(1, scrollTop / docHeight));
+  }
+
+  function updateTargetState() {
+    const progress = getScrollProgress();
+    const segments = states.length - 1;
+    const raw = progress * segments;
+    const idx = Math.min(Math.floor(raw), segments - 1);
+    const t = raw - idx;
+
+    // Smoothstep easing
+    const st = t * t * (3 - 2 * t);
+
+    const from = states[idx];
+    const to = states[idx + 1];
+
+    targetState.melt = from.melt + (to.melt - from.melt) * st;
+    targetState.cam = from.cam.map((v, i) => v + (to.cam[i] - v) * st);
+    targetState.bg = from.bg.map((v, i) => v + (to.bg[i] - v) * st);
+    targetState.light = from.light + (to.light - from.light) * st;
+  }
+
+  window.addEventListener('scroll', updateTargetState);
+
+  /* ═══════ ANIMATION LOOP ═══════ */
+  const clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const time = clock.getElapsedTime();
+    const lerpSpeed = 0.042;
+
+    // Lerp current → target
+    currentState.melt += (targetState.melt - currentState.melt) * lerpSpeed;
+    currentState.light += (targetState.light - currentState.light) * lerpSpeed;
+    for (let i = 0; i < 3; i++) {
+      currentState.cam[i] += (targetState.cam[i] - currentState.cam[i]) * lerpSpeed;
+      currentState.bg[i] += (targetState.bg[i] - currentState.bg[i]) * lerpSpeed;
+    }
+
+    // Update uniforms
+    meltUniforms.uTime.value = time;
+    meltUniforms.uMelt.value = currentState.melt;
+
+    // Lerp shader colors toward theme targets
+    const cLerp = 0.035;
+    meltUniforms.uDarkSteel.value.lerp(colorTargets.darkSteel, cLerp);
+    meltUniforms.uHotPrimary.value.lerp(colorTargets.hotPrimary, cLerp);
+    meltUniforms.uMidTone.value.lerp(colorTargets.midTone, cLerp);
+    meltUniforms.uHighlight.value.lerp(colorTargets.highlight, cLerp);
+    meltUniforms.uWhiteHot.value.lerp(colorTargets.whiteHot, cLerp);
+    meltUniforms.uRimColor.value.lerp(colorTargets.rimColor, cLerp);
+
+    // Lerp light colors
+    pointLight1.color.lerp(lightTarget1, cLerp);
+    pointLight2.color.lerp(lightTarget2, cLerp);
+    pointLight3.color.lerp(lightTarget3, cLerp);
+
+    // Lerp particle colors
+    dripMat.color.lerp(particleTargetDrip, cLerp);
+    fireMat.color.lerp(particleTargetFire, cLerp);
+    sparkMat.color.lerp(particleTargetSpark, cLerp);
+    poolMat.color.lerp(particleTargetPool, cLerp);
+
+    // Camera with mouse parallax
+    camera.position.set(
+      currentState.cam[0] + mouseX * 0.6,
+      currentState.cam[1] + mouseY * 0.42,
+      currentState.cam[2]
+    );
+    camera.lookAt(0, 0, 0);
+
+    // Background color
+    scene.background = new THREE.Color(currentState.bg[0], currentState.bg[1], currentState.bg[2]);
+
+    // Light flicker
+    pointLight1.intensity = currentState.light + Math.sin(time * 3.2) * 0.4 + Math.cos(time * 5.1) * 0.2;
+    pointLight2.intensity = (currentState.light * 0.6) + Math.sin(time * 2.7) * 0.3;
+    pointLight3.intensity = (currentState.light * 0.4) + Math.cos(time * 4.3) * 0.2;
+
+    // Floating bob
+    dumbbellGroup.position.y = Math.sin(time * 0.72) * 0.08;
+    // Mouse tilt
+    dumbbellGroup.rotation.y = mouseX * 0.15;
+    dumbbellGroup.rotation.x = mouseY * 0.08;
+
+    // Update drip particles
+    const melt = currentState.melt;
+    const dripPos = dripParticles.geometry.attributes.position.array;
+    for (let i = 0; i < DRIP_COUNT; i++) {
+      dripLifetimes[i] -= 0.005;
+      if (dripLifetimes[i] <= 0 || dripPos[i*3+1] < -3) {
+        dripPos[i*3] = (Math.random() - 0.5) * 2.5;
+        dripPos[i*3+1] = -0.3 + Math.random() * 0.5;
+        dripPos[i*3+2] = (Math.random() - 0.5) * 1.5;
+        dripVelocities[i*3+1] = -0.008;
+        dripLifetimes[i] = 0.5 + Math.random() * 0.5;
+      }
+      dripVelocities[i*3+1] -= 0.0005; // gravity
+      dripPos[i*3] += dripVelocities[i*3];
+      dripPos[i*3+1] += dripVelocities[i*3+1];
+      dripPos[i*3+2] += dripVelocities[i*3+2];
+    }
+    dripParticles.geometry.attributes.position.needsUpdate = true;
+    dripMat.opacity = melt > 0.15 ? Math.min(0.7, (melt - 0.15) * 2.5) : 0;
+
+    // Update fire particles
+    const fPos = fireParticles.geometry.attributes.position.array;
+    for (let i = 0; i < FIRE_COUNT; i++) {
+      fireLifetimes[i] -= 0.008;
+      if (fireLifetimes[i] <= 0) {
+        resetFireParticle(i);
+      }
+      fPos[i*3] += fireVelocities[i*3];
+      fPos[i*3+1] += fireVelocities[i*3+1];
+      fPos[i*3+2] += fireVelocities[i*3+2];
+    }
+    fireParticles.geometry.attributes.position.needsUpdate = true;
+    fireMat.opacity = melt > 0.42 ? Math.min(0.6, (melt - 0.42) * 2) : 0;
+
+    // Update spark particles
+    const sPos = sparkParticles.geometry.attributes.position.array;
+    for (let i = 0; i < SPARK_COUNT; i++) {
+      sparkLifetimes[i] -= 0.012;
+      sparkVelocities[i*3+1] -= 0.001; // gravity
+      if (sparkLifetimes[i] <= 0) {
+        resetSparkParticle(i);
+      }
+      sPos[i*3] += sparkVelocities[i*3];
+      sPos[i*3+1] += sparkVelocities[i*3+1];
+      sPos[i*3+2] += sparkVelocities[i*3+2];
+    }
+    sparkParticles.geometry.attributes.position.needsUpdate = true;
+    sparkMat.opacity = melt > 0.68 ? Math.min(0.9, (melt - 0.68) * 3) : 0;
+
+    // Molten pool
+    poolMat.opacity = melt > 0.30 ? Math.min(0.15, (melt - 0.30) * 0.4) : 0;
+    pool.scale.setScalar(1 + Math.sin(time * 2) * 0.05);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  /* ═══════ RESIZE ═══════ */
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════
+     UI JAVASCRIPT
+     ═══════════════════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ═══════ CUSTOM CURSOR ═══════ */
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+  let mx = 0, my = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+  });
+
+  function animateCursor() {
+    dotX += (mx - dotX) * 0.35;
+    dotY += (my - dotY) * 0.35;
+    ringX += (mx - ringX) * 0.12;
+    ringY += (my - ringY) * 0.12;
+
+    dot.style.left = dotX + 'px';
+    dot.style.top = dotY + 'px';
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Cursor hover expand
+  const hoverEls = document.querySelectorAll('a, button, .service-card, .theme-dot, .badge');
+  hoverEls.forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+  });
+
+  /* ═══════ SCROLL PROGRESS BAR ═══════ */
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    progressBar.style.width = (scrolled * 100) + '%';
+  });
+
+  /* ═══════ NAVBAR SCROLL ═══════ */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ═══════ MOBILE MENU ═══════ */
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    // Stagger menu items
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach((link, i) => {
+      link.style.transitionDelay = (0.1 + i * 0.06) + 's';
+    });
+  });
+
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+
+  /* ═══════ HERO ENTRANCE ═══════ */
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.hero').classList.add('loaded');
+    }, 200);
+  });
+
+  /* ═══════ INTERSECTION OBSERVER — FADE IN ═══════ */
+  const fiElements = document.querySelectorAll('.fi');
+  const fiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  fiElements.forEach(el => fiObserver.observe(el));
+
+  /* ═══════ STAT COUNTERS (IntersectionObserver) ═══════ */
+  const statValues = document.querySelectorAll('.stat-value[data-target]');
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const decimal = parseInt(el.dataset.decimal || '0');
+        const suffix = el.dataset.suffix || '';
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function updateCounter(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = (target * eased).toFixed(decimal);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(updateCounter);
+        }
+
+        requestAnimationFrame(updateCounter);
+        statsObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statValues.forEach(el => statsObserver.observe(el));
+
+  /* ═══════ THEME SWITCHER ═══════ */
+  const themeDots = document.querySelectorAll('.theme-dot');
+  themeDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const theme = dot.dataset.theme;
+      themeDots.forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+
+      if (theme === 'ember') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+
+      // Sync Three.js dumbbell colors
+      if (typeof window.setThreeTheme === 'function') {
+        window.setThreeTheme(theme);
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
